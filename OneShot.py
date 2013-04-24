@@ -59,7 +59,7 @@ class OneShot:
         self.sfmEntry.set_text("20000") 
         
     def on_stock_combobox_changed(self, combobox):
-        print "on_stock_combobox_changed"
+        print "on_stock_combobox_changed does nothing"
         #self.stockMaterialFilter.refilter()
         
     def on_tool_combobox_changed(self, combobox):
