@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<data>
+<!--  Steel Stock  -->
+	<cuttingData>
+		<stockMaterial type="str">Steel</stockMaterial>
+		<toolMaterial type="str">HSS</toolMaterial>
+		<toolDiameter type="float">.250</toolDiameter>
+		<chipLoad type="float">.001</chipLoad>
+		<cuttingSpeed type="int">90</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Steel</stockMaterial>
+		<toolMaterial type="str">HSS</toolMaterial>
+		<toolDiameter type="float">.500</toolDiameter>
+		<chipLoad type="float">.001</chipLoad>
+		<cuttingSpeed type="int">90</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Steel</stockMaterial>
+		<toolMaterial type="str">HSS</toolMaterial>
+		<toolDiameter type="float">.750</toolDiameter>
+		<chipLoad type="float">.003</chipLoad>
+		<cuttingSpeed type="int">90</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Steel</stockMaterial>
+		<toolMaterial type="str">HSS</toolMaterial>
+		<toolDiameter type="float">1.00</toolDiameter>
+		<chipLoad type="float">.004</chipLoad>
+		<cuttingSpeed type="int">90</cuttingSpeed>
+	</cuttingData>
+	<!-- Carbide Tools -->
+	<cuttingData>
+		<stockMaterial type="str">Steel</stockMaterial>
+		<toolMaterial type="str">Carbide</toolMaterial>
+		<toolDiameter type="float">.250</toolDiameter>
+		<chipLoad type="float">.005</chipLoad>
+		<cuttingSpeed type="int">400</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Steel</stockMaterial>
+		<toolMaterial type="str">Carbide</toolMaterial>
+		<toolDiameter type="float">.500</toolDiameter>
+		<chipLoad type="float">.005</chipLoad>
+		<cuttingSpeed type="int">400</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Steel</stockMaterial>
+		<toolMaterial type="str">Carbide</toolMaterial>
+		<toolDiameter type="float">.750</toolDiameter>
+		<chipLoad type="float">.005</chipLoad>
+		<cuttingSpeed type="int">400</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Steel</stockMaterial>
+		<toolMaterial type="str">Carbide</toolMaterial>
+		<toolDiameter type="float">1.00</toolDiameter>
+		<chipLoad type="float">.005</chipLoad>
+		<cuttingSpeed type="int">400</cuttingSpeed>
+	</cuttingData>
+<!--   Aluminum Stock -->	
+	<cuttingData>
+		<stockMaterial type="str">Aluminum</stockMaterial>
+		<toolMaterial type="str">HSS</toolMaterial>
+		<toolDiameter type="float">.250</toolDiameter>
+		<chipLoad type="float">.002</chipLoad>
+		<cuttingSpeed type="int">200</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Aluminum</stockMaterial>
+		<toolMaterial type="str">HSS</toolMaterial>
+		<toolDiameter type="float">.500</toolDiameter>
+		<chipLoad type="float">.003</chipLoad>
+		<cuttingSpeed type="int">200</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Aluminum</stockMaterial>
+		<toolMaterial type="str">HSS</toolMaterial>
+		<toolDiameter type="float">.750</toolDiameter>
+		<chipLoad type="float">.004</chipLoad>
+		<cuttingSpeed type="int">200</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Aluminum</stockMaterial>
+		<toolMaterial type="str">HSS</toolMaterial>
+		<toolDiameter type="float">1.00</toolDiameter>
+		<chipLoad type="float">.005</chipLoad>
+		<cuttingSpeed type="int">200</cuttingSpeed>
+	</cuttingData>
+	<!-- Carbide Tools -->
+	<cuttingData>
+		<stockMaterial type="str">Aluminum</stockMaterial>
+		<toolMaterial type="str">Carbide</toolMaterial>
+		<toolDiameter type="float">.250</toolDiameter>
+		<chipLoad type="float">.008</chipLoad>
+		<cuttingSpeed type="int">800</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Aluminum</stockMaterial>
+		<toolMaterial type="str">Carbide</toolMaterial>
+		<toolDiameter type="float">.500</toolDiameter>
+		<chipLoad type="float">.008</chipLoad>
+		<cuttingSpeed type="int">800</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Aluminum</stockMaterial>
+		<toolMaterial type="str">Carbide</toolMaterial>
+		<toolDiameter type="float">.750</toolDiameter>
+		<chipLoad type="float">.008</chipLoad>
+		<cuttingSpeed type="int">800</cuttingSpeed>
+	</cuttingData>
+	<cuttingData>
+		<stockMaterial type="str">Aluminum</stockMaterial>
+		<toolMaterial type="str">Carbide</toolMaterial>
+		<toolDiameter type="float">1.00</toolDiameter>
+		<chipLoad type="float">.008</chipLoad>
+		<cuttingSpeed type="int">800</cuttingSpeed>
+	</cuttingData>
+	
+	
+
+
+</data>

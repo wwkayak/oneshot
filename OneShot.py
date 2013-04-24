@@ -15,8 +15,8 @@ from gladevcp.gladebuilder import GladeBuilder
 
 # set up paths to files (in this case: /usr/bin/oneshot, usr/share/linuxcnc
 BASE = os.path.abspath(os.path.join(os.path.dirname(sys.argv[0]), ".."))
-#libdir = os.path.join(BASE, "lib", "python")
-#sys.path.insert(0, libdir)
+libdir = os.path.join(BASE, "lib", "python")
+sys.path.insert(0, libdir)
 datadir = os.path.join(BASE, "share", "linuxcnc")
 gladeFile = os.path.join(datadir,"OneShot.glade")
 feedSpeedFile = os.path.join(datadir,"feed-speed.xml")
