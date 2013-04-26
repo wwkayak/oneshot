@@ -12,6 +12,7 @@ import hal
 import gremlin
 import gladevcp.makepins
 from gladevcp.gladebuilder import GladeBuilder
+#from gladevcp.persistence import IniFile
 
 # set up paths to files (in this case: /usr/bin/oneshot, usr/share/linuxcnc
 BASE = os.path.abspath(os.path.join(os.path.dirname(sys.argv[0]), ".."))
@@ -41,7 +42,7 @@ class OneShot:
         self.estop_led = self.builder.get_object("estop_led")
         self.hal_meter_feed = self.builder.get_object("hal_meter_feed")
         self.window.show() 
-        #self.window.maximize() 
+        self.window.maximize() 
         self.panel = gladevcp.makepins.GladePanel( self.halcomp, gladeFile, 
                                                    self.builder, None)
         self.halcomp.ready()
@@ -164,8 +165,15 @@ class OneShot:
             
         return True #must return tru to keep running   
                
-    
+       
             
 if __name__ == "__main__":
     instantiationInitializesAndCreates = OneShot()
+    
+    inifile = linuxcnc.ini("postgui.hal")
+    postgui_halfile = inifile.find("HAL", "POSTGUI_HALFILE")
+    if postgui_halfile:
+        if subprocess.check_call(["halcmd", "-i",inifile,"-f", postgui_halfile]): 
+            raise SystemExit, res
+    
     gtk.main()
