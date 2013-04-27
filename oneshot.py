@@ -3,6 +3,9 @@
 import pygtk
 import __builtin__
 import sys,os
+from os.path import expanduser
+from exceptions import OSError, ValueError
+from subprocess import check_call, CalledProcessError
 import gtk
 import gobject
 from xml.etree import ElementTree
@@ -12,15 +15,18 @@ import hal
 import gremlin
 import gladevcp.makepins
 from gladevcp.gladebuilder import GladeBuilder
-#from gladevcp.persistence import IniFile
+
+
 
 # set up paths to files (in this case: /usr/bin/oneshot, usr/share/linuxcnc
+configs = os.path.join(expanduser("~"), "linuxcnc", "configs", "Oneshot")
 BASE = os.path.abspath(os.path.join(os.path.dirname(sys.argv[0]), ".."))
 libdir = os.path.join(BASE, "lib", "python")
 sys.path.insert(0, libdir)
 datadir = os.path.join(BASE, "share", "linuxcnc")
 gladeFile = os.path.join(datadir,"oneshot.glade")
 feedSpeedFile = os.path.join(datadir,"feed-speed.xml")
+
 
 
 class OneShot:
@@ -60,11 +66,11 @@ class OneShot:
         self.sfmEntry.set_text("20000") 
         
     def on_stock_combobox_changed(self, combobox):
-        print "on_stock_combobox_changed does nothing"
+        print "on_stock_combobox_changed called"
         #self.stockMaterialFilter.refilter()
         
     def on_tool_combobox_changed(self, combobox):
-        print "on_tool_combobox_changed"
+        print "on_tool_combobox_changed called"
         #self.toolMaterialFilter.refilter() 
         
     def format_floats(self, column, cell, model, iter):
@@ -165,16 +171,21 @@ class OneShot:
             
         return True #must return tru to keep running   
                
-       
+    def get_handlers(halcomp,builder,useropts):
+        print "%s.get_handlers() called" % (__name__)
+        return [ OneShot ()]  
             
 if __name__ == "__main__":
-    
     instantiationInitializesAndCreates = OneShot()
-    
-    inifile = linuxcnc.ini("postgui.hal")
+    inifile = linuxcnc.ini(sys.argv[2])
     postgui_halfile = inifile.find("HAL", "POSTGUI_HALFILE")
     if postgui_halfile:
-        if subprocess.check_call(["halcmd", "-i",inifile,"-f", postgui_halfile]): 
-            raise SystemExit, res
+        print "postgui_halfile: ", postgui_halfile 
+        try:
+           check_call(["halcmd", "-i", sys.argv[2],
+                                 "-f", os.path.join(configs, "postgui.hal")]) 
+        except (OSError, ValueError, CalledProcessError) as e:
+            print "CalledProcessError: ", e.cmd    
+            raise SystemExit, e
     
     gtk.main()
