@@ -1,0 +1,9 @@
+loadrt scale
+setp scale.0.gain 60.0
+addf scale.0 servo-thread 
+
+net scale2meter scale.0.out oneshot.hal_meter_feed
+net vel2scale scale.0.in motion.current-vel 
+
+net spindle2meter motion.spindle-speed-out oneshot.hal_meter_spindle
+

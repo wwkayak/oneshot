@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <data>
-<!-- sdhfgsdfhgsdkfh  Steel Stock  -->
+<!-- Steel Stock  -->
 	<cuttingData>
 		<stockMaterial type="str">Steel</stockMaterial>
 		<toolMaterial type="str">HSS</toolMaterial>
