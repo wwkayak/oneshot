@@ -47,8 +47,8 @@
                         <child>
                           <object class="GtkImageMenuItem" id="imagemenuitem2">
                             <property name="visible">True</property>
-                            <property name="use_action_appearance">True</property>
                             <property name="related_action">hal_action_open</property>
+                            <property name="use_action_appearance">True</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
                             <property name="always_show_image">True</property>
@@ -171,8 +171,8 @@
                   <object class="GtkToggleToolButton" id="estop_button">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">E-Stop: Toggle to enable power.</property>
-                    <property name="use_action_appearance">True</property>
                     <property name="related_action">hal_toggleaction_estop</property>
+                    <property name="use_action_appearance">True</property>
                     <property name="label" translatable="yes">_Stop</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-stop</property>
@@ -187,8 +187,8 @@
                   <object class="GtkToggleToolButton" id="power_button">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">Enable CNC. Turn off E-Stop to enable</property>
-                    <property name="use_action_appearance">True</property>
                     <property name="related_action">hal_toggleaction_power</property>
+                    <property name="use_action_appearance">True</property>
                     <property name="label" translatable="yes">C_onnect</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-connect</property>
@@ -203,8 +203,8 @@
                   <object class="GtkToggleToolButton" id="run_button">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">Run. Will switch to auto mode and run the currently loaded program</property>
-                    <property name="use_action_appearance">True</property>
                     <property name="related_action">hal_toggleaction_run</property>
+                    <property name="use_action_appearance">True</property>
                     <property name="label" translatable="yes">_Play</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-media-play</property>
@@ -217,8 +217,8 @@
                 <child>
                   <object class="GtkToolButton" id="step_button">
                     <property name="visible">True</property>
-                    <property name="use_action_appearance">True</property>
                     <property name="related_action">hal_action_step</property>
+                    <property name="use_action_appearance">True</property>
                     <property name="label" translatable="yes">_Next</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-media-next</property>
@@ -231,8 +231,8 @@
                 <child>
                   <object class="GtkToggleToolButton" id="pause_button">
                     <property name="visible">True</property>
-                    <property name="use_action_appearance">True</property>
                     <property name="related_action">hal_toggleaction_pause</property>
+                    <property name="use_action_appearance">True</property>
                     <property name="label" translatable="yes">P_ause</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-media-pause</property>
@@ -245,8 +245,8 @@
                 <child>
                   <object class="GtkToggleToolButton" id="stop_button">
                     <property name="visible">True</property>
-                    <property name="use_action_appearance">True</property>
                     <property name="related_action">hal_toggleaction_stop</property>
+                    <property name="use_action_appearance">True</property>
                     <property name="label" translatable="yes">_Stop</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-media-stop</property>
@@ -259,8 +259,8 @@
                 <child>
                   <object class="GtkToolButton" id="reload_button">
                     <property name="visible">True</property>
-                    <property name="use_action_appearance">True</property>
                     <property name="related_action">hal_action_reload</property>
+                    <property name="use_action_appearance">True</property>
                     <property name="label" translatable="yes">_Refresh</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-refresh</property>
@@ -319,10 +319,10 @@
                                         <child>
                                           <object class="HAL_LED" id="x_led">
                                             <property name="visible">True</property>
-                                            <property name="off_color">red</property>
                                             <property name="led_shape">2</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">5</property>
+                                            <property name="on_color">green</property>
+                                            <property name="off_color">red</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -373,10 +373,10 @@
                                         <child>
                                           <object class="HAL_LED" id="y_led">
                                             <property name="visible">True</property>
-                                            <property name="off_color">red</property>
                                             <property name="led_shape">2</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">5</property>
+                                            <property name="on_color">green</property>
+                                            <property name="off_color">red</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -427,10 +427,10 @@
                                         <child>
                                           <object class="HAL_LED" id="z_led">
                                             <property name="visible">True</property>
-                                            <property name="off_color">red</property>
                                             <property name="led_shape">2</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">5</property>
+                                            <property name="on_color">green</property>
+                                            <property name="off_color">red</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -491,10 +491,10 @@
                                     <child>
                                       <object class="HAL_LED" id="xyz_led">
                                         <property name="visible">True</property>
-                                        <property name="off_color">red</property>
                                         <property name="led_shape">2</property>
-                                        <property name="on_color">green</property>
                                         <property name="led_size">5</property>
+                                        <property name="on_color">green</property>
+                                        <property name="off_color">red</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -580,8 +580,8 @@ Red =  hard limit</property>
                                 <child>
                                   <object class="HAL_LED" id="x_soft_limit_led">
                                     <property name="visible">True</property>
-                                    <property name="on_color">yellow</property>
                                     <property name="led_size">6</property>
+                                    <property name="on_color">yellow</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -628,8 +628,8 @@ Red =  hard limit</property>
                                 <child>
                                   <object class="HAL_LED" id="y_soft_limit_led">
                                     <property name="visible">True</property>
-                                    <property name="on_color">yellow</property>
                                     <property name="led_size">6</property>
+                                    <property name="on_color">yellow</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -676,8 +676,8 @@ Red =  hard limit</property>
                                 <child>
                                   <object class="HAL_LED" id="z_soft_limit_led">
                                     <property name="visible">True</property>
-                                    <property name="on_color">yellow</property>
                                     <property name="led_size">6</property>
+                                    <property name="on_color">yellow</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -828,8 +828,8 @@ Red =  hard limit</property>
                                         <child>
                                           <object class="HAL_LED" id="g53_led">
                                             <property name="visible">True</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">6</property>
+                                            <property name="on_color">green</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -857,8 +857,8 @@ Red =  hard limit</property>
                                         <child>
                                           <object class="HAL_LED" id="g54_led">
                                             <property name="visible">True</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">6</property>
+                                            <property name="on_color">green</property>
                                           </object>
                                           <packing>
                                             <property name="position">1</property>
@@ -884,8 +884,8 @@ Red =  hard limit</property>
                                         <child>
                                           <object class="HAL_LED" id="g55_led">
                                             <property name="visible">True</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">6</property>
+                                            <property name="on_color">green</property>
                                           </object>
                                           <packing>
                                             <property name="position">1</property>
@@ -934,8 +934,8 @@ Red =  hard limit</property>
                                         <child>
                                           <object class="HAL_LED" id="g56_led">
                                             <property name="visible">True</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">6</property>
+                                            <property name="on_color">green</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -963,8 +963,8 @@ Red =  hard limit</property>
                                         <child>
                                           <object class="HAL_LED" id="g57_led">
                                             <property name="visible">True</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">6</property>
+                                            <property name="on_color">green</property>
                                           </object>
                                           <packing>
                                             <property name="position">1</property>
@@ -990,8 +990,8 @@ Red =  hard limit</property>
                                         <child>
                                           <object class="HAL_LED" id="g58_led">
                                             <property name="visible">True</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">6</property>
+                                            <property name="on_color">green</property>
                                           </object>
                                           <packing>
                                             <property name="position">1</property>
@@ -1040,8 +1040,8 @@ Red =  hard limit</property>
                                         <child>
                                           <object class="HAL_LED" id="g59_led">
                                             <property name="visible">True</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">6</property>
+                                            <property name="on_color">green</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -1069,8 +1069,8 @@ Red =  hard limit</property>
                                         <child>
                                           <object class="HAL_LED" id="g59.x_led">
                                             <property name="visible">True</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">6</property>
+                                            <property name="on_color">green</property>
                                           </object>
                                           <packing>
                                             <property name="position">1</property>
@@ -1096,8 +1096,8 @@ Red =  hard limit</property>
                                         <child>
                                           <object class="HAL_LED" id="g92_led">
                                             <property name="visible">True</property>
-                                            <property name="on_color">green</property>
                                             <property name="led_size">6</property>
+                                            <property name="on_color">green</property>
                                           </object>
                                           <packing>
                                             <property name="position">1</property>
@@ -1144,17 +1144,17 @@ Red =  hard limit</property>
                                 <child>
                                   <object class="HAL_Meter" id="hal_meter_feed">
                                     <property name="visible">True</property>
-                                    <property name="bg_color">#ffffffffffff</property>
                                     <property name="z1_border">200</property>
+                                    <property name="label">Feed</property>
                                     <property name="minorscale">10</property>
                                     <property name="z2_color">#ffff00000000</property>
-                                    <property name="label">Feed</property>
                                     <property name="sublabel">IPM</property>
-                                    <property name="z0_border">100</property>
                                     <property name="z0_color">#0000ffff0000</property>
-                                    <property name="max">300</property>
                                     <property name="majorscale">20</property>
                                     <property name="z1_color">#ffffffff0000</property>
+                                    <property name="z0_border">100</property>
+                                    <property name="max">300</property>
+                                    <property name="bg_color">#ffffffffffff</property>
                                   </object>
                                   <packing>
                                     <property name="padding">3</property>
@@ -1164,17 +1164,17 @@ Red =  hard limit</property>
                                 <child>
                                   <object class="HAL_Meter" id="hal_meter_spindle">
                                     <property name="visible">True</property>
-                                    <property name="bg_color">#ffffffffffff</property>
+                                    <property name="label">Spindle</property>
                                     <property name="minorscale">50</property>
                                     <property name="z2_color">#ffff00000000</property>
-                                    <property name="label">Spindle</property>
                                     <property name="sublabel">RPM</property>
-                                    <property name="z0_border">2200</property>
                                     <property name="value">1800</property>
                                     <property name="z0_color">#0000ffff0000</property>
-                                    <property name="max">2500</property>
                                     <property name="majorscale">200</property>
                                     <property name="z1_color">#ffffffff0000</property>
+                                    <property name="z0_border">2200</property>
+                                    <property name="max">2500</property>
+                                    <property name="bg_color">#ffffffffffff</property>
                                   </object>
                                   <packing>
                                     <property name="padding">3</property>
@@ -1289,10 +1289,12 @@ Red =  hard limit</property>
                                               <object class="GtkVBox" id="vbox17">
                                                 <property name="visible">True</property>
                                                 <child>
-                                                  <object class="GtkButton" id="button6">
+                                                  <object class="GtkButton" id="jog_z_plus">
                                                     <property name="visible">True</property>
                                                     <property name="can_focus">True</property>
                                                     <property name="receives_default">True</property>
+                                                    <signal name="pressed" handler="on_jog_z_plus_pressed"/>
+                                                    <signal name="released" handler="on_jog_z_plus_released"/>
                                                     <child>
                                                       <object class="GtkImage" id="image10">
                                                         <property name="visible">True</property>
@@ -1305,10 +1307,12 @@ Red =  hard limit</property>
                                                   </packing>
                                                 </child>
                                                 <child>
-                                                  <object class="GtkButton" id="button7">
+                                                  <object class="GtkButton" id="jog_z_minus">
                                                     <property name="visible">True</property>
                                                     <property name="can_focus">True</property>
                                                     <property name="receives_default">True</property>
+                                                    <signal name="pressed" handler="on_jog_z_minus_pressed"/>
+                                                    <signal name="released" handler="on_jog_z_minus_released"/>
                                                     <child>
                                                       <object class="GtkImage" id="image9">
                                                         <property name="visible">True</property>
@@ -1329,23 +1333,12 @@ Red =  hard limit</property>
                                               </packing>
                                             </child>
                                             <child>
-                                              <object class="GtkButton" id="button1">
+                                              <object class="GtkButton" id="jog_y_plus">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">True</property>
                                                 <property name="receives_default">True</property>
-                                                <child>
-                                                  <object class="GtkLabel" id="label67">
-                                                    <property name="visible">True</property>
-                                                    <property name="label" translatable="yes">.001</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="GtkButton" id="button2">
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
+                                                <signal name="pressed" handler="on_jog_y_plus_pressed"/>
+                                                <signal name="released" handler="on_jog_y_plus_released"/>
                                                 <child>
                                                   <object class="GtkImage" id="image7">
                                                     <property name="visible">True</property>
@@ -1360,27 +1353,12 @@ Red =  hard limit</property>
                                               </packing>
                                             </child>
                                             <child>
-                                              <object class="GtkButton" id="button3">
+                                              <object class="GtkButton" id="jog_x_minus">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">True</property>
                                                 <property name="receives_default">True</property>
-                                                <child>
-                                                  <object class="GtkLabel" id="label68">
-                                                    <property name="visible">True</property>
-                                                    <property name="label" translatable="yes">.01</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="left_attach">2</property>
-                                                <property name="right_attach">3</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkButton" id="button4">
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
+                                                <signal name="pressed" handler="on_jog_x_minus_pressed"/>
+                                                <signal name="released" handler="on_jog_x_minus_released"/>
                                                 <child>
                                                   <object class="GtkImage" id="image5">
                                                     <property name="visible">True</property>
@@ -1395,10 +1373,12 @@ Red =  hard limit</property>
                                               </packing>
                                             </child>
                                             <child>
-                                              <object class="GtkButton" id="button5">
+                                              <object class="GtkButton" id="jog_x_plus">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">True</property>
                                                 <property name="receives_default">True</property>
+                                                <signal name="pressed" handler="on_jog_x_plus_pressed"/>
+                                                <signal name="released" handler="on_jog_x_plus_released"/>
                                                 <child>
                                                   <object class="GtkImage" id="image6">
                                                     <property name="visible">True</property>
@@ -1415,27 +1395,12 @@ Red =  hard limit</property>
                                               </packing>
                                             </child>
                                             <child>
-                                              <object class="GtkButton" id="button8">
+                                              <object class="GtkButton" id="jog_y_minus">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">True</property>
                                                 <property name="receives_default">True</property>
-                                                <child>
-                                                  <object class="GtkLabel" id="label69">
-                                                    <property name="visible">True</property>
-                                                    <property name="label" translatable="yes">.1</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="top_attach">2</property>
-                                                <property name="bottom_attach">3</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkButton" id="button9">
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
+                                                <signal name="pressed" handler="on_jog_y_minus_pressed"/>
+                                                <signal name="released" handler="on_jog_y_minus_released"/>
                                                 <child>
                                                   <object class="GtkImage" id="image8">
                                                     <property name="visible">True</property>
@@ -1473,6 +1438,46 @@ Red =  hard limit</property>
                                                 <property name="right_attach">3</property>
                                                 <property name="top_attach">2</property>
                                                 <property name="bottom_attach">3</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkToggleButton" id="jog_slow_button">
+                                                <property name="label" translatable="yes">.001</property>
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="receives_default">True</property>
+                                                <signal name="toggled" handler="on_jog_speed_button_toggled"/>
+                                              </object>
+                                              <packing>
+                                                <property name="x_options">GTK_FILL</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkToggleButton" id="jog_med_button">
+                                                <property name="label" translatable="yes">.01</property>
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="receives_default">True</property>
+                                                <property name="active">True</property>
+                                                <signal name="toggled" handler="on_jog_speed_button_toggled"/>
+                                              </object>
+                                              <packing>
+                                                <property name="left_attach">2</property>
+                                                <property name="right_attach">3</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkToggleButton" id="jog_fast_button">
+                                                <property name="label" translatable="yes">.1</property>
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="receives_default">True</property>
+                                                <signal name="toggled" handler="on_jog_speed_button_toggled"/>
+                                              </object>
+                                              <packing>
+                                                <property name="top_attach">2</property>
+                                                <property name="bottom_attach">3</property>
+                                                <property name="x_options">GTK_FILL</property>
                                               </packing>
                                             </child>
                                           </object>
@@ -3120,18 +3125,18 @@ etc...</property>
   </object>
   <object class="EMC_Action_Home" id="hal_action_home_x">
     <property name="short_label">X</property>
-    <property name="confirm_homed">True</property>
     <property name="axis">0</property>
+    <property name="confirm_homed">True</property>
   </object>
   <object class="EMC_Action_Home" id="hal_action_home_y">
     <property name="short_label">Y</property>
-    <property name="confirm_homed">True</property>
     <property name="axis">1</property>
+    <property name="confirm_homed">True</property>
   </object>
   <object class="EMC_Action_Home" id="hal_action_home_z">
     <property name="short_label">Z</property>
-    <property name="confirm_homed">True</property>
     <property name="axis">2</property>
+    <property name="confirm_homed">True</property>
   </object>
   <object class="EMC_Action_Home" id="hal_action_home_all">
     <property name="short_label">XYZ</property>

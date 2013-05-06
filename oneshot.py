@@ -39,6 +39,8 @@ class OneShot:
         self.cmd = linuxcnc.command()
         self.err = linuxcnc.error_channel()
         self.errorDisplayTime = 0
+        self.jogIncrement = .001
+        self.notListening = False
         
         self.builder = gtk.Builder()
         self.builder.add_from_file(gladeFile)
@@ -76,6 +78,54 @@ class OneShot:
     def on_tool_combobox_changed(self, combobox):
         print "on_tool_combobox_changed called"
         #self.toolMaterialFilter.refilter() 
+        
+    def on_jog_x_plus_pressed(self, button):
+        print "x+ pressed@{0}".format(self.jogIncrement)
+    
+    def on_jog_x_plus_released(self, button):
+        print "x+ released@{0}".format(self.jogIncrement)
+    
+    def on_jog_x_minus_pressed(self, button):
+        print "x- pressed@{0}".format(self.jogIncrement)
+    
+    def on_jog_x_minus_released(self, button):
+        print "x- released@{0}".format(self.jogIncrement)
+    
+    def on_jog_y_plus_pressed(self, button):
+        print "y+ pressed@{0}".format(self.jogIncrement)
+    
+    def on_jog_y_plus_released(self, button):
+        print "y+ released@{0}".format(self.jogIncrement)
+    
+    def on_jog_y_minus_pressed(self, button):
+        print "y- pressed@{0}".format(self.jogIncrement)
+    
+    def on_jog_y_minus_released(self, button):
+        print "y- released@{0}".format(self.jogIncrement)
+    
+    def on_jog_z_plus_pressed(self, button):
+        print "z+ pressed@{0}".format(self.jogIncrement)
+    
+    def on_jog_z_plus_released(self, button):
+        print "z+ released@{0}".format(self.jogIncrement)
+    
+    def on_jog_z_minus_pressed(self, button):
+        print "z- pressed@{0}".format(self.jogIncrement)
+    
+    def on_jog_z_minus_released(self, button):
+        print "z- released@{0}".format(self.jogIncrement)
+    
+    def on_jog_speed_button_toggled(self, button):
+        if self.notListening: 
+            return
+        self.notListening = True
+        self.builder.get_object("jog_slow_button").set_active(False)
+        self.builder.get_object("jog_med_button").set_active(False)
+        self.builder.get_object("jog_fast_button").set_active(False)
+        button.set_active(True)
+        self.jogIncrement = float(button.get_label())
+        print "jogIncrement", self.jogIncrement
+        self.notListening = False
 
     def on_power_button_toggled(self, button):
         self.builder.get_object("homing_frame").set_sensitive(
