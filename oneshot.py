@@ -9,7 +9,7 @@ from exceptions import OSError, ValueError
 from subprocess import check_call, CalledProcessError
 import gtk
 import gobject
-from xml.etree import ElementTree
+
 
 import linuxcnc
 import hal
@@ -29,7 +29,7 @@ libdir = os.path.join(BASE, "lib", "python")
 sys.path.insert(0, libdir)
 datadir = os.path.join(BASE, "share", "linuxcnc")
 gladeFile = os.path.join(datadir, "oneshot.glade")
-feedSpeedFile = os.path.join(datadir, "feed-speed.xml")
+
 
 
 class OneShot:
@@ -38,17 +38,19 @@ class OneShot:
         self.status = linuxcnc.stat()
         self.cmd = linuxcnc.command()
         self.err = linuxcnc.error_channel()
-        self.stockMaterialList = list()
-        self.toolMaterialList = list()
+        self.errorDisplayTime = 0
+        
         self.builder = gtk.Builder()
         self.builder.add_from_file(gladeFile)
         self.halcomp = hal.component("oneshot")
         self.builder.connect_signals(self)
         self.window = self.builder.get_object("window1")
-        self.error_statusbar = self.builder.get_object("statusbar_errors")
-        self.status_statusbar = self.builder.get_object("statusbar_status")
+        self.error_label = self.builder.get_object("error_label")
         self.home_all_label = self.builder.get_object("home_all_label")
         self.g92_led = self.builder.get_object("g92_led")
+        self.mode_label = self.builder.get_object("mode_label")
+        self.interp_label = self.builder.get_object("interp_label")
+        self.exec_label = self.builder.get_object("exec_label")
         self.wcs_leds = tuple([self.builder.get_object("g5{0}_led".format(i))
                               for i in range(3, 9)])
         self.home_axes = {'home_x_button':0, 'home_y_button':1,
@@ -59,10 +61,7 @@ class OneShot:
                                                    self.builder, None)
         self.halcomp.ready()
         gobject.timeout_add(500, self.periodic)
-        self.loadFeedsAndSpeeds()
-        self.addFeedsAndSpeeds()
-        #self.createMaterialFilters()
-
+        
     def on_quit_action_activate(self, data=None):
         print "Quit menu clicked"
         gtk.main_quit()
@@ -83,54 +82,34 @@ class OneShot:
                                 button.get_active())
         self.builder.get_object("wcs_resets_frame").set_sensitive(
                                 button.get_active())
-    def printStatus(self, prefix=None):
-        self.status.poll()
-        if prefix:
-            print prefix
-        print "homed?: ", self.status.homed
-        print "task_mode?:", self.status.task_mode
-        #print prefix, "status.interp: ", self.status.interp_state
-        #print prefix, "status.exec_state: ", self.status.exec_state
-        #print prefix, "status.interp_state: ", self.status.interp_state
-        #print prefix, "state: ", self.status.state
-        #print prefix, "task_mode--------------: ", self.status.task_mode
-        
+            
     def on_home_button_toggled(self, button):
-        
-        #add mode and error checkin: must synchronize toggle states if error
-        #gtk.Buildable.get_name solves glade ID glitch
-        axisNum = self.home_axes[gtk.Buildable.get_name(button)]
-        #if gladevcp.hal_actions.ensure_mode(self.status, self.cmd, 
-        #        linuxcnc.MODE_MANUAL, linuxcnc.INTERP_IDLE):
-               
+        axisNum = self.home_axes[gtk.Buildable.get_name(button)]#glade glitch
         if button.get_active():
             if not util.ensure_mode(self.status, self.cmd, linuxcnc.MODE_MANUAL):
-                state = util.interpStateNames[self.status.interp_state]
-                mode = util.taskModeNames[self.status.motion_mode]
-                secondary = " Current Status: {0} :: {1} ".format(state, mode)
-                util.showErrorDialog("Unable to switch to MANUAL mode",
-                                     secondary)
-                return  #sync button status?                                    
+                util.showErrorDialog("Unable to switch to manual mode!")
+                self.synchronizeToggleButtons()
+                return  #sync button stati?                                    
             self.cmd.home(axisNum)
             self.status.poll()
-            for i in range(10):
-                time.sleep(1)
+            for waitToComplete in range(1):
+                time.sleep(.1)
                 self.status.poll()
-                if (self.status.state == linuxcnc.RCS_DONE):
-                    print "DONE" 
+                if self.status.state is linuxcnc.RCS_DONE:
+                    self.home_all_label.set_label('Un-home All')
                     break
-                if (self.status.state == linuxcnc.RCS_ERROR ):
-                    util.showErrorDialog(self.err.poll()[1])
+                if self.status.state is linuxcnc.RCS_ERROR:
+                    util.showErrorDialog("RCS_ERROR", self.err.poll()[1])
                     break
-            
-            
-    
+            self.synchronizeToggleButtons()
         else:
+            if not util.ensure_mode(self.status, self.cmd, linuxcnc.MODE_MANUAL):
+                util.showErrorDialog("Unable to switch to manual mode!")
+                self.synchronizeToggleButtons()
             self.cmd.unhome(axisNum) 
-            self.printStatus()
             if axisNum == -1:  
                 self.home_all_label.set_label('Home All') 
-        
+            self.synchronizeToggleButtons()
     def format_floats(self, column, cell, model, iter):
         idx = self.columnNames.index(column.get_title())
         cell.set_property('text', "%0.3f" % model.get_value(iter, idx))
@@ -148,76 +127,30 @@ class OneShot:
                                                   self.stockCombobox)
         self.toolMaterialFilter.set_visible_func(self.filter_tool, 
                                                  self.toolCombobox)
-
-    def loadFeedsAndSpeeds(self):
-        """ Load machine speeds and feeds data from an XML file.
-        
-            Allows for a speeds and feeds table to be
-            defined in an external file. The builtin getattr() method
-            is necessary because XML only contains the "name" of 
-            the types and values. (the word 'int', not an actual int())
-        """
-        
-        treeRoot = ElementTree.parse(feedSpeedFile)
-        cuttingDataList = treeRoot.getiterator(tag='cuttingData')
-        self.columnType = [getattr(__builtin__, col.get('type')) 
-                            for col in cuttingDataList[0]]
-        self.feedSpeedStore = gtk.ListStore(self.columnType[0], 
-                                            self.columnType[1], 
-                                            self.columnType[2], 
-                                            self.columnType[3], 
-                                            self.columnType[4])
-        self.columnNames = [col.tag for col in cuttingDataList[0]]
-        
-        for cuttingDataRow in cuttingDataList:
-            r = list()
-            for setting in cuttingDataRow:
-                r.append(getattr(__builtin__,
-                                 setting.get('type'))(setting.text))
-                if setting.tag == 'stockMaterial':
-                    if setting.text not in self.stockMaterialList:
-                        self.stockMaterialList.append(setting.text)
-                if setting.tag == 'toolMaterial':
-                    if setting.text not in self.toolMaterialList:
-                        self.toolMaterialList.append(setting.text)
-            self.feedSpeedStore.append(r)
-
-    def addFeedsAndSpeeds(self):
-        self.stockCombobox = self.builder.get_object("stock_combobox")
-        self.toolCombobox = self.builder.get_object("tool_combobox")
-        self.feedSpeedView = self.builder.get_object("feedSpeedView")
-        self.feedSpeedView.set_model(self.feedSpeedStore) 
-        for col, name, coltype in zip(self.feedSpeedView.get_columns(), 
-                                      self.columnNames, 
-                                      self.columnType):
-            col.set_title(name)
-            if coltype == float:
-                cell = gtk.CellRendererText()
-                cell.set_property('xalign', 1.0)
-                col.clear()
-                col.pack_start(cell)
-                col.set_cell_data_func(cell, self.format_floats)
-
-        [self.stockCombobox.append_text(mat) for mat in self.stockMaterialList]
-        self.stockCombobox.set_active(0)#glade bug fix?
-        [self.toolCombobox.append_text(mat) for mat in self.toolMaterialList] 
-        self.toolCombobox.set_active(0)#glade bug fix?   
-        self.sfmEntry = self.builder.get_object("sfm_value")
-        self.iptEntry = self.builder.get_object("ipt_value")
-
+    def synchronizeToggleButtons(self):
+        self.status.poll()
+        print "homed............", self.status.homed    
+    
     def periodic(self):
+        self.errorDisplayTime+=1
         self.error_status = self.err.poll()
         if self.error_status:
+            self.errorDisplayTime = 0
             self.error_kind, self.error_text = self.error_status
             if self.error_kind in (linuxcnc.NML_ERROR,
                                    linuxcnc.OPERATOR_ERROR):
                 self.error_type = "Error: "
             else:
                 self.error_type = "Info: "
-            self.message_id = self.error_statusbar.push(0, self.error_type +
-                                                      self.error_text) 
+            self.error_label.set_text(self.error_type + self.error_text)
+        if self.errorDisplayTime > 10:
+            self.errorDisplayTime = 0
+            self.error_label.set_text("")     
         self.status.poll()
-        
+        self.mode_label.set_text(util.taskModeNames[self.status.task_mode])
+        self.interp_label.set_text(
+                             util.interpStateNames[self.status.interp_state])
+        self.exec_label.set_text(util.execStateNames[self.status.exec_state])
         self.g92_led.hal_pin.set(sum(self.status.g92_offset))
         [led.set_active(False) for led in self.wcs_leds]
         self.wcs_leds[self.status.g5x_index].set_active(True)
@@ -234,7 +167,6 @@ if __name__ == "__main__":
     inifile = linuxcnc.ini(sys.argv[2])
     postgui_halfile = inifile.find("HAL", "POSTGUI_HALFILE")
     if postgui_halfile:
-        print "postgui_halfile: ", postgui_halfile 
         try:
             check_call(["halcmd", "-f", os.path.join(configs, "postgui.hal")]) 
         except (OSError, ValueError, CalledProcessError) as e:

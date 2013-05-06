@@ -2,7 +2,7 @@ loadrt scale
 setp scale.0.gain 60.0
 addf scale.0 servo-thread 
 
-#3 input 'AND' gate: personality = 256('and') + 3(inputs) 259... to HEX
+#three input 'AND' gate:: personality = 256('and') + 3(inputs) 259... to HEX)
 loadrt logic personality=0x103
 addf logic.0 servo-thread
 net xHomed2Led halui.joint.0.is-homed logic.0.in-00 oneshot.x_led
@@ -10,14 +10,42 @@ net yHomed2Led halui.joint.1.is-homed logic.0.in-01 oneshot.y_led
 net zHomed2Led halui.joint.2.is-homed logic.0.in-02 oneshot.z_led
 net logic2XYZLed logic.0.and oneshot.xyz_led
 
-
-
 net scale2meter scale.0.out oneshot.hal_meter_feed
 net vel2scale scale.0.in motion.current-vel 
 
 net spindle2meter motion.spindle-speed-out oneshot.hal_meter_spindle
 
-net estop2led oneshot.estop_led halui.estop.is-activated 
+net xmax2led halui.joint.0.on-hard-max-limit or2.0.in0  
+net ymax2led halui.joint.1.on-hard-max-limit or2.1.in0   
+net zmax2led halui.joint.2.on-hard-max-limit or2.2.in0   
+net xmin2led halui.joint.0.on-hard-min-limit or2.0.in1  
+net ymin2led halui.joint.1.on-hard-min-limit or2.1.in1  
+net zmin2led halui.joint.2.on-hard-min-limit or2.2.in1 
+ 
+net or2xhled or2.0.out oneshot.x_limit_led
+net or2yhled or2.1.out oneshot.y_limit_led
+net or2zhled or2.2.out oneshot.z_limit_led
+
+net xsmax2led halui.joint.0.on-soft-max-limit or2.3.in0  
+net ysmax2led halui.joint.1.on-soft-max-limit or2.4.in0  
+net zsmax2led halui.joint.2.on-soft-max-limit or2.5.in0   
+net xsmin2led halui.joint.0.on-soft-min-limit or2.3.in1  
+net ysmin2led halui.joint.1.on-soft-min-limit or2.4.in1  
+net zsmin2led halui.joint.2.on-soft-min-limit or2.5.in1  
+
+net or2xsled or2.3.out oneshot.x_soft_limit_led
+net or2ysled or2.4.out oneshot.y_soft_limit_led
+net or2zsled or2.5.out oneshot.z_soft_limit_led
+
+addf or2.0 servo-thread
+addf or2.1 servo-thread
+addf or2.2 servo-thread
+addf or2.3 servo-thread
+addf or2.4 servo-thread
+addf or2.5 servo-thread
+
+
+
 
 
 

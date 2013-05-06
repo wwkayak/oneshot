@@ -275,9 +275,6 @@
                 <property name="position">1</property>
               </packing>
             </child>
-            <child>
-              <placeholder/>
-            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -559,6 +556,178 @@
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkFrame" id="limit_switch_frame">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">Limit switch indicator lights. 
+Yellow = soft limit
+Red =  hard limit</property>
+                    <property name="border_width">5</property>
+                    <property name="label_xalign">0.5</property>
+                    <child>
+                      <object class="GtkHBox" id="limit_switch_box">
+                        <property name="visible">True</property>
+                        <property name="border_width">5</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkFrame" id="frame7">
+                            <property name="visible">True</property>
+                            <property name="label_xalign">0.5</property>
+                            <child>
+                              <object class="GtkHBox" id="hbox16">
+                                <property name="visible">True</property>
+                                <property name="border_width">2</property>
+                                <property name="homogeneous">True</property>
+                                <child>
+                                  <object class="HAL_LED" id="x_soft_limit_led">
+                                    <property name="visible">True</property>
+                                    <property name="on_color">yellow</property>
+                                    <property name="led_size">6</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="HAL_LED" id="x_limit_led">
+                                    <property name="visible">True</property>
+                                    <property name="led_size">6</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                              </object>
+                            </child>
+                            <child type="label">
+                              <object class="GtkLabel" id="label72">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">X</property>
+                                <property name="use_markup">True</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="padding">2</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFrame" id="frame8">
+                            <property name="visible">True</property>
+                            <property name="label_xalign">0.5</property>
+                            <child>
+                              <object class="GtkHBox" id="hbox17">
+                                <property name="visible">True</property>
+                                <property name="border_width">2</property>
+                                <property name="homogeneous">True</property>
+                                <child>
+                                  <object class="HAL_LED" id="y_soft_limit_led">
+                                    <property name="visible">True</property>
+                                    <property name="on_color">yellow</property>
+                                    <property name="led_size">6</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="HAL_LED" id="y_limit_led">
+                                    <property name="visible">True</property>
+                                    <property name="led_size">6</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                              </object>
+                            </child>
+                            <child type="label">
+                              <object class="GtkLabel" id="label73">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Y</property>
+                                <property name="use_markup">True</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="padding">1</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFrame" id="frame9">
+                            <property name="visible">True</property>
+                            <property name="label_xalign">0.5</property>
+                            <child>
+                              <object class="GtkHBox" id="hbox18">
+                                <property name="visible">True</property>
+                                <property name="border_width">2</property>
+                                <property name="homogeneous">True</property>
+                                <child>
+                                  <object class="HAL_LED" id="z_soft_limit_led">
+                                    <property name="visible">True</property>
+                                    <property name="on_color">yellow</property>
+                                    <property name="led_size">6</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="HAL_LED" id="z_limit_led">
+                                    <property name="visible">True</property>
+                                    <property name="led_size">6</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                              </object>
+                            </child>
+                            <child type="label">
+                              <object class="GtkLabel" id="label74">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Z</property>
+                                <property name="use_markup">True</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="padding">1</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                      </object>
+                    </child>
+                    <child type="label">
+                      <object class="GtkLabel" id="label75">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Limit Switches</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkFrame" id="wcs_resets_frame">
                     <property name="visible">True</property>
                     <property name="sensitive">False</property>
@@ -619,7 +788,7 @@
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">1</property>
+                    <property name="position">2</property>
                   </packing>
                 </child>
                 <child>
@@ -1038,12 +1207,13 @@
                     </child>
                   </object>
                   <packing>
-                    <property name="position">2</property>
+                    <property name="position">3</property>
                   </packing>
                 </child>
               </object>
               <packing>
                 <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">0</property>
               </packing>
             </child>
@@ -1066,24 +1236,11 @@
                             <property name="border_width">5</property>
                             <child>
                               <object class="HAL_Gremlin" id="hal_gremlin1">
-                                <property name="sensitive">False</property>
+                                <property name="visible">True</property>
                                 <property name="double_buffered">False</property>
-                                <property name="metric_units">False</property>
                               </object>
                               <packing>
                                 <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkStatusbar" id="statusbar_errors">
-                                <property name="visible">True</property>
-                                <property name="border_width">1</property>
-                                <property name="spacing">2</property>
-                                <property name="has_resize_grip">False</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="position">1</property>
                               </packing>
                             </child>
                             <child>
@@ -1177,7 +1334,10 @@
                                                 <property name="can_focus">True</property>
                                                 <property name="receives_default">True</property>
                                                 <child>
-                                                  <placeholder/>
+                                                  <object class="GtkLabel" id="label67">
+                                                    <property name="visible">True</property>
+                                                    <property name="label" translatable="yes">.001</property>
+                                                  </object>
                                                 </child>
                                               </object>
                                             </child>
@@ -1190,6 +1350,7 @@
                                                   <object class="GtkImage" id="image7">
                                                     <property name="visible">True</property>
                                                     <property name="stock">gtk-go-up</property>
+                                                    <property name="icon-size">6</property>
                                                   </object>
                                                 </child>
                                               </object>
@@ -1204,7 +1365,10 @@
                                                 <property name="can_focus">True</property>
                                                 <property name="receives_default">True</property>
                                                 <child>
-                                                  <placeholder/>
+                                                  <object class="GtkLabel" id="label68">
+                                                    <property name="visible">True</property>
+                                                    <property name="label" translatable="yes">.01</property>
+                                                  </object>
                                                 </child>
                                               </object>
                                               <packing>
@@ -1221,6 +1385,7 @@
                                                   <object class="GtkImage" id="image5">
                                                     <property name="visible">True</property>
                                                     <property name="stock">gtk-go-back</property>
+                                                    <property name="icon-size">6</property>
                                                   </object>
                                                 </child>
                                               </object>
@@ -1238,6 +1403,7 @@
                                                   <object class="GtkImage" id="image6">
                                                     <property name="visible">True</property>
                                                     <property name="stock">gtk-go-forward</property>
+                                                    <property name="icon-size">6</property>
                                                   </object>
                                                 </child>
                                               </object>
@@ -1254,7 +1420,10 @@
                                                 <property name="can_focus">True</property>
                                                 <property name="receives_default">True</property>
                                                 <child>
-                                                  <placeholder/>
+                                                  <object class="GtkLabel" id="label69">
+                                                    <property name="visible">True</property>
+                                                    <property name="label" translatable="yes">.1</property>
+                                                  </object>
                                                 </child>
                                               </object>
                                               <packing>
@@ -1271,6 +1440,7 @@
                                                   <object class="GtkImage" id="image8">
                                                     <property name="visible">True</property>
                                                     <property name="stock">gtk-go-down</property>
+                                                    <property name="icon-size">6</property>
                                                   </object>
                                                 </child>
                                               </object>
@@ -1287,7 +1457,15 @@
                                                 <property name="can_focus">True</property>
                                                 <property name="receives_default">True</property>
                                                 <child>
-                                                  <placeholder/>
+                                                  <object class="GtkLabel" id="label70">
+                                                    <property name="visible">True</property>
+                                                    <property name="label" translatable="yes">OVR</property>
+                                                    <attributes>
+                                                      <attribute name="weight" value="bold"/>
+                                                      <attribute name="underline" value="True"/>
+                                                      <attribute name="foreground" value="#ffff00000000"/>
+                                                    </attributes>
+                                                  </object>
                                                 </child>
                                               </object>
                                               <packing>
@@ -1317,7 +1495,7 @@
                               </object>
                               <packing>
                                 <property name="expand">False</property>
-                                <property name="position">2</property>
+                                <property name="position">1</property>
                               </packing>
                             </child>
                           </object>
@@ -2797,33 +2975,97 @@ etc...</property>
           <object class="GtkHBox" id="statusbarBox">
             <property name="visible">True</property>
             <child>
-              <object class="GtkStatusbar" id="statusbar1">
+              <object class="GtkStatusbar" id="status_statusbar">
                 <property name="visible">True</property>
                 <property name="border_width">1</property>
                 <property name="spacing">2</property>
                 <child>
                   <object class="GtkHBox" id="hbox5">
                     <property name="visible">True</property>
+                    <property name="spacing">5</property>
                     <child>
-                      <object class="HAL_LED" id="estop_led">
+                      <object class="GtkLabel" id="mode_status_label">
                         <property name="visible">True</property>
-                        <property name="is_on">True</property>
-                        <property name="led_size">5</property>
-                        <property name="led_blink_rate">0</property>
+                        <property name="xalign">0</property>
+                        <property name="xpad">2</property>
+                        <property name="label" translatable="yes">Mode:</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
+                        <property name="fill">False</property>
                         <property name="position">0</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="estop_indicator_label">
+                      <object class="GtkLabel" id="mode_label">
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
-                        <property name="label" translatable="yes">E-Stop</property>
+                        <property name="xpad">2</property>
+                        <property name="label" translatable="yes">...</property>
+                        <attributes>
+                          <attribute name="foreground" value="#00000000ffff"/>
+                        </attributes>
                       </object>
                       <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
                         <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="Interp_status_label">
+                        <property name="visible">True</property>
+                        <property name="xpad">2</property>
+                        <property name="label" translatable="yes">Iterpreter:</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="interp_label">
+                        <property name="visible">True</property>
+                        <property name="xalign">0</property>
+                        <property name="xpad">2</property>
+                        <property name="label" translatable="yes">...</property>
+                        <attributes>
+                          <attribute name="foreground" value="#00000000ffff"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label61">
+                        <property name="visible">True</property>
+                        <property name="xpad">2</property>
+                        <property name="label" translatable="yes">Task:</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="exec_label">
+                        <property name="visible">True</property>
+                        <property name="xalign">0</property>
+                        <property name="xpad">2</property>
+                        <property name="label" translatable="yes">...</property>
+                        <attributes>
+                          <attribute name="foreground" value="#00000000ffff"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">5</property>
                       </packing>
                     </child>
                   </object>
@@ -2839,17 +3081,33 @@ etc...</property>
               </packing>
             </child>
             <child>
-              <object class="GtkStatusbar" id="statusbar_status">
+              <object class="GtkStatusbar" id="error_statusbar">
                 <property name="visible">True</property>
-                <property name="border_width">1</property>
                 <property name="spacing">2</property>
+                <child>
+                  <object class="GtkHBox" id="hbox15">
+                    <property name="visible">True</property>
+                    <property name="homogeneous">True</property>
+                    <child>
+                      <object class="GtkLabel" id="error_label">
+                        <property name="visible">True</property>
+                        <attributes>
+                          <attribute name="foreground" value="#ffff00000000"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
               </object>
               <packing>
                 <property name="position">1</property>
               </packing>
-            </child>
-            <child>
-              <placeholder/>
             </child>
           </object>
           <packing>
