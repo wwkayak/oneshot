@@ -10,11 +10,6 @@ net yHomed2Led halui.joint.1.is-homed logic.0.in-01 oneshot.y_led
 net zHomed2Led halui.joint.2.is-homed logic.0.in-02 oneshot.z_led
 net logic2XYZLed logic.0.and oneshot.xyz_led
 
-net scale2meter scale.0.out oneshot.hal_meter_feed
-net vel2scale scale.0.in motion.current-vel 
-
-net spindle2meter motion.spindle-speed-out oneshot.hal_meter_spindle
-
 net xmax2led halui.joint.0.on-hard-max-limit or2.0.in0  
 net ymax2led halui.joint.1.on-hard-max-limit or2.1.in0   
 net zmax2led halui.joint.2.on-hard-max-limit or2.2.in0   
