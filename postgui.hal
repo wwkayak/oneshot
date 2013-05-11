@@ -5,6 +5,23 @@ addf scale.0 servo-thread
 #three input 'AND' gate:: personality = 256('and') + 3(inputs) 259... to HEX)
 loadrt logic personality=0x103
 addf logic.0 servo-thread
+
+loadrt sum2 names=sumx,sumy,sumz
+setp sumx.gain0 -1.0
+setp sumy.gain0 -1.0
+setp sumz.gain0 -1.0
+addf sumx servo-thread
+addf sumy servo-thread
+addf sumz servo-thread
+
+#loadrt or2 is in home-simulator.hal
+addf or2.0 servo-thread
+addf or2.1 servo-thread
+addf or2.2 servo-thread
+addf or2.3 servo-thread
+addf or2.4 servo-thread
+addf or2.5 servo-thread
+
 net xHomed2Led halui.joint.0.is-homed logic.0.in-00 oneshot.x_led
 net yHomed2Led halui.joint.1.is-homed logic.0.in-01 oneshot.y_led
 net zHomed2Led halui.joint.2.is-homed logic.0.in-02 oneshot.z_led
@@ -32,12 +49,23 @@ net or2xsled or2.3.out oneshot.x_soft_limit_led
 net or2ysled or2.4.out oneshot.y_soft_limit_led
 net or2zsled or2.5.out oneshot.z_soft_limit_led
 
-addf or2.0 servo-thread
-addf or2.1 servo-thread
-addf or2.2 servo-thread
-addf or2.3 servo-thread
-addf or2.4 servo-thread
-addf or2.5 servo-thread
+net xabs2label halui.axis.0.pos-feedback oneshot.dro_x sumx.in1
+net yabs2label halui.axis.1.pos-feedback oneshot.dro_y sumy.in1
+net zabs2label halui.axis.2.pos-feedback oneshot.dro_z sumz.in1
+
+net xrel2label halui.axis.0.pos-relative oneshot.dro_gx
+net yrel2label halui.axis.1.pos-relative oneshot.dro_gy
+net zrel2label halui.axis.2.pos-relative oneshot.dro_gz
+
+net cmdd2sumx halui.axis.0.pos-commanded sumx.in0
+net sumx2dtg sumx.out oneshot.dtg_x
+net cmdd2sumy halui.axis.1.pos-commanded sumy.in0
+net sumy2dtg sumy.out oneshot.dtg_y
+net cmdd2sumz halui.axis.2.pos-commanded sumz.in0
+net sumz2dtg sumz.out oneshot.dtg_z
+
+
+
 
 
 

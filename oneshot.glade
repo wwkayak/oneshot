@@ -743,11 +743,12 @@ Red =  hard limit</property>
                         <property name="border_width">5</property>
                         <property name="homogeneous">True</property>
                         <child>
-                          <object class="HAL_Button" id="hal_button1">
+                          <object class="HAL_Button" id="g28_button">
                             <property name="label" translatable="yes">G28</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="on_g28_button_clicked"/>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -755,11 +756,12 @@ Red =  hard limit</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="HAL_Button" id="hal_button2">
+                          <object class="HAL_Button" id="g28_1_button">
                             <property name="label" translatable="yes">G28.1</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="on_g28_1_button_clicked"/>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1144,16 +1146,17 @@ Red =  hard limit</property>
                             <property name="border_width">2</property>
                             <property name="n_rows">3</property>
                             <property name="n_columns">2</property>
+                            <property name="homogeneous">True</property>
                             <child>
                               <object class="GtkLabel" id="label4">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">X</property>
+                                <property name="label" translatable="yes">ABS X</property>
                               </object>
                             </child>
                             <child>
                               <object class="GtkLabel" id="label5">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">Y</property>
+                                <property name="label" translatable="yes">ABS Y</property>
                               </object>
                               <packing>
                                 <property name="top_attach">1</property>
@@ -1163,7 +1166,7 @@ Red =  hard limit</property>
                             <child>
                               <object class="GtkLabel" id="label9">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">Z</property>
+                                <property name="label" translatable="yes">ABS Z</property>
                               </object>
                               <packing>
                                 <property name="top_attach">2</property>
@@ -1171,9 +1174,11 @@ Red =  hard limit</property>
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="dro_x">
+                              <object class="HAL_Label" id="dro_x">
                                 <property name="visible">True</property>
                                 <property name="label" translatable="yes">-</property>
+                                <property name="text_template">%.04f</property>
+                                <property name="label_pin_type">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -1181,9 +1186,11 @@ Red =  hard limit</property>
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="dro_y">
+                              <object class="HAL_Label" id="dro_y">
                                 <property name="visible">True</property>
                                 <property name="label" translatable="yes">-</property>
+                                <property name="text_template">%.04f</property>
+                                <property name="label_pin_type">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -1193,9 +1200,11 @@ Red =  hard limit</property>
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="dro_z">
+                              <object class="HAL_Label" id="dro_z">
                                 <property name="visible">True</property>
                                 <property name="label" translatable="yes">-</property>
+                                <property name="text_template">%.04f</property>
+                                <property name="label_pin_type">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -1218,37 +1227,15 @@ Red =  hard limit</property>
                             <child>
                               <object class="GtkLabel" id="label18">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">G54 X</property>
+                                <property name="label" translatable="yes">REL X</property>
                               </object>
                             </child>
                             <child>
                               <object class="GtkLabel" id="label20">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">G54 Y</property>
+                                <property name="label" translatable="yes">REL Y</property>
                               </object>
                               <packing>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="dro_x54">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="dro_y54">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
                                 <property name="top_attach">1</property>
                                 <property name="bottom_attach">2</property>
                               </packing>
@@ -1256,7 +1243,7 @@ Red =  hard limit</property>
                             <child>
                               <object class="GtkLabel" id="label26">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">G54 Z</property>
+                                <property name="label" translatable="yes">REL Z</property>
                               </object>
                               <packing>
                                 <property name="top_attach">2</property>
@@ -1264,9 +1251,37 @@ Red =  hard limit</property>
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="dro_z54">
+                              <object class="HAL_Label" id="dro_gx">
                                 <property name="visible">True</property>
                                 <property name="label" translatable="yes">-</property>
+                                <property name="text_template">%.04f</property>
+                                <property name="label_pin_type">1</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="HAL_Label" id="dro_gy">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">-</property>
+                                <property name="text_template">%.04f</property>
+                                <property name="label_pin_type">1</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                                <property name="top_attach">1</property>
+                                <property name="bottom_attach">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="HAL_Label" id="dro_gz">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">-</property>
+                                <property name="text_template">%.04f</property>
+                                <property name="label_pin_type">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -1295,33 +1310,11 @@ Red =  hard limit</property>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="dtg_x">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
                               <object class="GtkLabel" id="label15">
                                 <property name="visible">True</property>
                                 <property name="label" translatable="yes">DTG Y</property>
                               </object>
                               <packing>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="dtg_y">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
                                 <property name="top_attach">1</property>
                                 <property name="bottom_attach">2</property>
                               </packing>
@@ -1337,9 +1330,37 @@ Red =  hard limit</property>
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="dtg_z">
+                              <object class="HAL_Label" id="dtg_x">
                                 <property name="visible">True</property>
                                 <property name="label" translatable="yes">-</property>
+                                <property name="text_template">%0.4f</property>
+                                <property name="label_pin_type">1</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="HAL_Label" id="dtg_y">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">-</property>
+                                <property name="text_template">%0.4f</property>
+                                <property name="label_pin_type">1</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                                <property name="top_attach">1</property>
+                                <property name="bottom_attach">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="HAL_Label" id="dtg_z">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">-</property>
+                                <property name="text_template">%0.4f</property>
+                                <property name="label_pin_type">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -3185,10 +3206,40 @@ etc...</property>
               <object class="GtkHBox" id="hbox15">
                 <property name="visible">True</property>
                 <child>
-                  <object class="GtkStatusbar" id="error_statusbar">
+                  <object class="GtkEventBox" id="statusbar_event_box">
                     <property name="visible">True</property>
-                    <property name="spacing">2</property>
-                    <property name="has_resize_grip">False</property>
+                    <signal name="leave_notify_event" handler="on_error_statusbar_leave_notify_event"/>
+                    <signal name="enter_notify_event" handler="on_error_statusbar_enter_notify_event"/>
+                    <child>
+                      <object class="GtkVBox" id="vbox19">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel" id="error_label1">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">label</property>
+                            <attributes>
+                              <attribute name="foreground" value="#ffff00000000"/>
+                            </attributes>
+                          </object>
+                          <packing>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="error_label2">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">label</property>
+                            <attributes>
+                              <attribute name="foreground" value="#808064646464"/>
+                            </attributes>
+                          </object>
+                          <packing>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                    </child>
                   </object>
                   <packing>
                     <property name="padding">5</property>
@@ -3199,10 +3250,11 @@ etc...</property>
                   <object class="GtkHBox" id="hbox22">
                     <property name="visible">True</property>
                     <child>
-                      <object class="GtkButton" id="button7">
+                      <object class="GtkButton" id="status_pop_button">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
+                        <signal name="released" handler="on_status_pop_button_released"/>
                         <child>
                           <object class="GtkImage" id="image18">
                             <property name="visible">True</property>
@@ -3416,9 +3468,25 @@ etc...</property>
   <object class="GtkAdjustment" id="jogAdjustment">
     <property name="value">100</property>
     <property name="upper">200</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-    <property name="page_size">10</property>
+    <property name="step_increment">0.01</property>
     <signal name="value_changed" handler="on_jogAdjustment_value_changed"/>
+  </object>
+  <object class="GtkWindow" id="error_popup">
+    <property name="resizable">False</property>
+    <property name="window_position">center</property>
+    <property name="default_width">440</property>
+    <property name="default_height">250</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="skip_pager_hint">True</property>
+    <property name="accept_focus">False</property>
+    <property name="focus_on_map">False</property>
+    <property name="decorated">False</property>
+    <property name="deletable">False</property>
+    <child>
+      <object class="GtkLabel" id="error_queue_label">
+        <property name="visible">True</property>
+        <property name="label" translatable="yes">Error Queue</property>
+      </object>
+    </child>
   </object>
 </interface>

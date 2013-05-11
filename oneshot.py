@@ -21,6 +21,7 @@ from gladevcp.gladebuilder import GladeBuilder
 
 import time
 import util
+from errormanager import ErrorManager
 
 # set up paths to files (eg: /usr/bin, usr/share/linuxcnc)
 configs = os.path.join(expanduser("~"), "linuxcnc", "configs", "Oneshot")
@@ -40,7 +41,10 @@ class OneShot:
         self.err = linuxcnc.error_channel()
         self.errorDisplayTime = 0
         self.jogIncrement = .001
-        
+        self.errorQueueLen = int(inifile.find("DISPLAY", 
+                                                "ERROR_QUEUE_LEN"))
+        self.errorManager = ErrorManager(self.errorQueueLen)
+        self.errorManager.connect("model_changed", self.update_errors)
         self.notListening = False
         
         self.builder = gtk.Builder()
@@ -48,8 +52,8 @@ class OneShot:
         self.halcomp = hal.component("oneshot")
         self.builder.connect_signals(self)
         self.window = self.builder.get_object("window1")
-        self.error_statusbar = self.builder.get_object("error_statusbar")
-        self.context_id = self.error_statusbar.get_context_id("errors")
+        self.error_label1 = self.builder.get_object("error_label1")
+        self.error_label2 = self.builder.get_object("error_label2")
         self.home_all_label = self.builder.get_object("home_all_label")
         self.g92_led = self.builder.get_object("g92_led")
         self.mode_label = self.builder.get_object("mode_label")
@@ -59,13 +63,21 @@ class OneShot:
                               for i in range(3, 9)])
         self.home_axes = {'home_x_button':0, 'home_y_button':1,
                      'home_z_button':2, 'home_all_button':-1} 
-        self.loadOverrides()                           
+        self.loadOverrides()  
+        self.errorWindow = self.builder.get_object("error_popup")                         
         self.window.show()
         self.window.maximize()
         self.panel = gladevcp.makepins.GladePanel(self.halcomp, gladeFile,
                                                    self.builder, None)
         self.halcomp.ready()
         gobject.timeout_add(500, self.periodic)
+    
+    def update_errors(self, errorMngr):
+        self.error_label2.set_text(self.error_label1.get_text())
+        self.error_label1.set_text(errorMngr.getLastError())
+        
+        
+        
 
     def loadOverrides(self):
         self.notListening = True
@@ -74,6 +86,10 @@ class OneShot:
         self.maxFeedOverride = inifile.find("DISPLAY", "MAX_FEED_OVERRIDE")
         self.maxSpindleOverride = inifile.find("DISPLAY", 
                                                 "MAX_SPINDLE_OVERRIDE")
+        self.maxSpindleSpeed = inifile.find("DISPLAY", 
+                                                "MAX_SPINDLE_SPEED")
+                                                        
+                                                                                                
         if self.defaultFeedRate:
             self.defaultFeedRate = float(self.defaultFeedRate)
         else:
@@ -90,16 +106,19 @@ class OneShot:
             self.maxVelocity = float(self.maxVelocity)
         else:
             self.maxVelocity = 1.0
-        
+        if self.maxSpindleSpeed:
+            self.maxSpindleSpeed = float(self.maxSpindleSpeed)
+        else:
+            self.maxSpindleSpeed = 1000            
         self.feedRate = self.defaultFeedRate
         self.spindleSpeed = 0.0  
         self.jogSpeed = 0.10
         self.feedAdjustment = self.builder.get_object("feedAdjustment")
         self.feedAdjustment.configure(self.defaultFeedRate, 0.0, self.maxVelocity,
                                     0.01, 0.0, 0.0)
-        self.spidleAdjustment = self.builder.get_object("spindleAdjustment")
-        self.spindleAdjustment.configure(self.spindleSpeed, 0.0, self.maxSpindleOverride,
-                                    0.01, 0.0, 0.0)
+        self.spindleAdjustment = self.builder.get_object("spindleAdjustment")
+        self.spindleAdjustment.configure(self.spindleSpeed, 0.0, 
+                                         self.maxSpindleSpeed, 10, 0.0, 0.0)
         self.jogAdjustment = self.builder.get_object("jogAdjustment")
         self.jogAdjustment.configure(self.jogSpeed, 0.0, self.maxVelocity,
                                     0.01, 0.0, 0.0)                                    
@@ -108,7 +127,34 @@ class OneShot:
     def on_quit_action_activate(self, data=None):
         print "Quit menu clicked"
         gtk.main_quit()
+    
+    def on_error_statusbar_enter_notify_event(self, statusbar, event):
+        print "statusbar entered"
+        self.builder.get_object("error_queue_label").set_text(
+                                 self.errorManager.getErrors())
+        self.errorWindow.show()
+        self.errorWindow.present()
+        
+    
+    def on_error_statusbar_leave_notify_event(self, statusbar, event): 
+        print "statusbar exited"  
+        self.errorWindow.hide()  
+       
+    def on_g28_1_button_clicked(self, button):
+        if util.ensure_mode(self.status, self.cmd, linuxcnc.MODE_MDI):
+            self.cmd.mdi("G28.1")
+            print "G28.1 succeeded"
+        else:
+            print "G28.1 failed?"
+            
+    def on_g28_button_clicked(self,  button):
+        if util.ensure_mode(self.status, self.cmd, linuxcnc.MODE_MDI):
+            self.cmd.mdi("G28 Z2")
+            self.cmd.wait_complete()             
 
+    def on_status_pop_button_released(self, button):
+        self.error_statusbar.pop(self.context_id)
+    
     def on_face_settings_set_button_activate(self, button, data=None):
         self.sfmEntry.set_text("20000")
 
@@ -176,12 +222,17 @@ class OneShot:
         return round(value*60)
         
     def on_spindleAdjustment_value_changed(self, adjustment):
-        self.spindleSpeed = self.defaultFeedRate * adjustment.get_value()
+        self.spindleSpeed = adjustment.get_value()
         
-    def on_feed_scale_format_value(self, slider, value):
-        return round(value*60)   
+    def on_spindle_scale_format_value(self, slider, value):
+        return round(value)   
      
-    
+    def on_jogAdjustment_value_changed(self, adjustment):
+        self.jogSpeed = adjustment.get_value()
+        
+    def on_jog_scale_format_value(self, slider, value):
+        return round(value*60) 
+        
     def on_power_button_toggled(self, button):
         self.builder.get_object("homing_frame").set_sensitive(
                                 button.get_active())
@@ -260,11 +311,11 @@ class OneShot:
                 self.error_type = "Error: "
             else:
                 self.error_type = "Info: "
-            self.error_statusbar.push(self.context_id, 
-                                      self.error_type + self.error_text)
+            self.errorManager.push(self.error_type + self.error_text)
         if self.errorDisplayTime > 10:
             self.errorDisplayTime = 0
-            self.error_statusbar.push 
+            self.error_label1.set_text("fix this")
+            self.error_label2.set_text("2") 
     
     def get_handlers(halcomp, builder, useropts):
         print "%s.get_handlers() called" % (__name__)

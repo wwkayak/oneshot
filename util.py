@@ -1,6 +1,7 @@
 import gtk
 import linuxcnc
 
+
 taskModeNames = {linuxcnc.MODE_MANUAL : "MANUAL",
                  linuxcnc.MODE_AUTO : "AUTO",
                  linuxcnc.MODE_MDI : "MDI" }
@@ -21,7 +22,7 @@ execStateNames = {linuxcnc.EXEC_ERROR : "ERROR",
                   linuxcnc.EXEC_WAITING_FOR_DELAY : "WAITING_FOR_DELAY",
                   linuxcnc.EXEC_WAITING_FOR_SYSTEM_CMD : 
                                                       "WAITING_FOR_SYSTEM_CMD"}
-                                                           
+                                                          
                   
 def showMessageDialog(message):
     dialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO,
