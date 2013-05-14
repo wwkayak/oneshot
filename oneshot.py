@@ -44,7 +44,7 @@ class OneShot:
         self.errorQueueLen = int(inifile.find("DISPLAY", 
                                                 "ERROR_QUEUE_LEN"))
         self.errorManager = ErrorManager(self.errorQueueLen)
-        self.errorManager.connect("model_changed", self.update_errors)
+        self.errorManager.connect("error_added", self.update_errors)
         self.notListening = False
         
         self.builder = gtk.Builder()
@@ -63,8 +63,11 @@ class OneShot:
                               for i in range(3, 9)])
         self.home_axes = {'home_x_button':0, 'home_y_button':1,
                      'home_z_button':2, 'home_all_button':-1} 
-        self.loadOverrides()  
-        self.errorWindow = self.builder.get_object("error_popup")                         
+        self.errorWindow = self.builder.get_object("error_popup")
+        self.errorWindowLabel = self.builder.get_object("error_queue_label") 
+        self.builder.get_object("spindle_adjustment").set_value(1.0)
+        self.feedAdjustment = self.builder.get_object("feed_adjustment")
+        self.feedAdjustment.set_value(100)                        
         self.window.show()
         self.window.maximize()
         self.panel = gladevcp.makepins.GladePanel(self.halcomp, gladeFile,
@@ -73,72 +76,32 @@ class OneShot:
         gobject.timeout_add(500, self.periodic)
     
     def update_errors(self, errorMngr):
+        error = errorMngr.getLastError()
         self.error_label2.set_text(self.error_label1.get_text())
-        self.error_label1.set_text(errorMngr.getLastError())
-        
-        
-        
-
-    def loadOverrides(self):
-        self.notListening = True
-        self.maxVelocity = inifile.find("TRAJ", "MAX_LINEAR_VELOCITY")
-        self.defaultFeedRate = inifile.find("TRAJ", "DEFAULT_VELOCITY")
-        self.maxFeedOverride = inifile.find("DISPLAY", "MAX_FEED_OVERRIDE")
-        self.maxSpindleOverride = inifile.find("DISPLAY", 
-                                                "MAX_SPINDLE_OVERRIDE")
-        self.maxSpindleSpeed = inifile.find("DISPLAY", 
-                                                "MAX_SPINDLE_SPEED")
-                                                        
-                                                                                                
-        if self.defaultFeedRate:
-            self.defaultFeedRate = float(self.defaultFeedRate)
-        else:
-            self.defaultFeedRate = 0.5 
-        if self.maxFeedOverride:
-            self.maxFeedOverride = float(self.maxFeedOverride)
-        else:
-            self.maxFeedOverride = 1.0
-        if self.maxSpindleOverride:
-            self.maxSpindleOverride = float(self.maxSpindleOverride)
-        else:
-            self.maxSpindleOverride = 1.0
-        if self.maxVelocity:
-            self.maxVelocity = float(self.maxVelocity)
-        else:
-            self.maxVelocity = 1.0
-        if self.maxSpindleSpeed:
-            self.maxSpindleSpeed = float(self.maxSpindleSpeed)
-        else:
-            self.maxSpindleSpeed = 1000            
-        self.feedRate = self.defaultFeedRate
-        self.spindleSpeed = 0.0  
-        self.jogSpeed = 0.10
-        self.feedAdjustment = self.builder.get_object("feedAdjustment")
-        self.feedAdjustment.configure(self.defaultFeedRate, 0.0, self.maxVelocity,
-                                    0.01, 0.0, 0.0)
-        self.spindleAdjustment = self.builder.get_object("spindleAdjustment")
-        self.spindleAdjustment.configure(self.spindleSpeed, 0.0, 
-                                         self.maxSpindleSpeed, 10, 0.0, 0.0)
-        self.jogAdjustment = self.builder.get_object("jogAdjustment")
-        self.jogAdjustment.configure(self.jogSpeed, 0.0, self.maxVelocity,
-                                    0.01, 0.0, 0.0)                                    
-        self.notListening = False #gobject.Gobject.freeze_notify()?
-                                           
+        self.error_label1.set_text( error[0] + error[1] + error[2] )
+ 
     def on_quit_action_activate(self, data=None):
         print "Quit menu clicked"
         gtk.main_quit()
     
     def on_error_statusbar_enter_notify_event(self, statusbar, event):
-        print "statusbar entered"
-        self.builder.get_object("error_queue_label").set_text(
-                                 self.errorManager.getErrors())
+        errs = self.errorManager.getErrors()
+        if not errs: 
+            return
+        errTxt = ["{0}-{1}{2}".format(err[0], err[1], err[2]) for err in errs]
+        self.errorWindowLabel.set_text('\n'.join(errTxt))
         self.errorWindow.show()
         self.errorWindow.present()
-        
-    
+ 
     def on_error_statusbar_leave_notify_event(self, statusbar, event): 
-        print "statusbar exited"  
         self.errorWindow.hide()  
+    
+    def on_feed_minus_button_clicked(self, button):
+        self.feedAdjustment.set_value(self.feedAdjustment.get_value()-1)
+        
+    def on_feed_plus_button_clicked(self, button):
+        self.feedAdjustment.set_value(self.feedAdjustment.get_value()+1)        
+       
        
     def on_g28_1_button_clicked(self, button):
         if util.ensure_mode(self.status, self.cmd, linuxcnc.MODE_MDI):
@@ -168,10 +131,11 @@ class OneShot:
         
     def on_jog_x_plus_pressed(self, button):
         print "x+ pressed@{0}".format(self.jogIncrement)
-        self.cmd.jog(linuxcnc.JOG_CONTINUOUS, 0, self.builder.get_object("jog_speed").get_value() / 60)
-    
+        self.cmd.jog(linuxcnc.JOG_CONTINUOUS, 0, self.builder.get_object("jog_speed").get_value())
+        
     def on_jog_x_plus_released(self, button):
         print "x+ released@{0}".format(self.jogIncrement)
+        self.cmd.jog(linuxcnc.JOG_STOP, 0)
     
     def on_jog_x_minus_pressed(self, button):
         print "x- pressed@{0}".format(self.jogIncrement)
@@ -215,17 +179,8 @@ class OneShot:
         print "jogIncrement", self.jogIncrement
         self.notListening = False
     
-    def on_feedAdjustment_value_changed(self, adjustment):
-        self.feedRate = self.defaultFeedRate * adjustment.get_value()
-        
-    def on_feed_scale_format_value(self, slider, value):
-        return round(value*60)
-        
-    def on_spindleAdjustment_value_changed(self, adjustment):
-        self.spindleSpeed = adjustment.get_value()
-        
     def on_spindle_scale_format_value(self, slider, value):
-        return round(value)   
+        return "{0}%".format(value*100)   
      
     def on_jogAdjustment_value_changed(self, adjustment):
         self.jogSpeed = adjustment.get_value()
@@ -288,7 +243,6 @@ class OneShot:
         print "homed............", self.status.homed    
     
     def periodic(self):
-        self.checkErrors()    
         self.status.poll()
         self.mode_label.set_text(util.taskModeNames[self.status.task_mode])
         self.interp_label.set_text(
@@ -297,26 +251,8 @@ class OneShot:
         self.g92_led.hal_pin.set(sum(self.status.g92_offset))
         [led.set_active(False) for led in self.wcs_leds]
         self.wcs_leds[self.status.g5x_index].set_active(True)
-        
         return True #must return tru to keep running   
-
-    def checkErrors(self):
-        self.errorDisplayTime+=1
-        self.error_status = self.err.poll()
-        if self.error_status:
-            self.errorDisplayTime = 0
-            self.error_kind, self.error_text = self.error_status
-            if self.error_kind in (linuxcnc.NML_ERROR,
-                                   linuxcnc.OPERATOR_ERROR):
-                self.error_type = "Error: "
-            else:
-                self.error_type = "Info: "
-            self.errorManager.push(self.error_type + self.error_text)
-        if self.errorDisplayTime > 10:
-            self.errorDisplayTime = 0
-            self.error_label1.set_text("fix this")
-            self.error_label2.set_text("2") 
-    
+   
     def get_handlers(halcomp, builder, useropts):
         print "%s.get_handlers() called" % (__name__)
         return [OneShot()]  

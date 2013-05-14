@@ -64,7 +64,17 @@ net sumy2dtg sumy.out oneshot.dtg_y
 net cmdd2sumz halui.axis.2.pos-commanded sumz.in0
 net sumz2dtg sumz.out oneshot.dtg_z
 
+loadrt conv_float_s32 names=f2s32
+addf f2s32 servo-thread
 
+
+net scale2spindle oneshot.spindle_scale halui.spindle-override.scale
+
+setp halui.feed-override.direct-value true
+setp halui.feed-override.count-enable true
+setp halui.feed-override.scale .01
+net scale2conv oneshot.feed_scale f2s32.in 
+net conv2counts f2s32.out  halui.feed-override.counts 
 
 
 
