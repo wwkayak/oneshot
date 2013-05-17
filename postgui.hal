@@ -49,32 +49,32 @@ net or2xsled or2.3.out oneshot.x_soft_limit_led
 net or2ysled or2.4.out oneshot.y_soft_limit_led
 net or2zsled or2.5.out oneshot.z_soft_limit_led
 
-net xabs2label halui.axis.0.pos-feedback oneshot.dro_x sumx.in1
-net yabs2label halui.axis.1.pos-feedback oneshot.dro_y sumy.in1
-net zabs2label halui.axis.2.pos-feedback oneshot.dro_z sumz.in1
+#net xabs2label halui.axis.0.pos-feedback oneshot.dro_x sumx.in1
+#net yabs2label halui.axis.1.pos-feedback oneshot.dro_y sumy.in1
+#net zabs2label halui.axis.2.pos-feedback oneshot.dro_z sumz.in1
 
-net xrel2label halui.axis.0.pos-relative oneshot.dro_gx
-net yrel2label halui.axis.1.pos-relative oneshot.dro_gy
-net zrel2label halui.axis.2.pos-relative oneshot.dro_gz
+#net xrel2label halui.axis.0.pos-relative oneshot.dro_gx
+#net yrel2label halui.axis.1.pos-relative oneshot.dro_gy
+#net zrel2label halui.axis.2.pos-relative oneshot.dro_gz
 
 net cmdd2sumx halui.axis.0.pos-commanded sumx.in0
-net sumx2dtg sumx.out oneshot.dtg_x
+#net sumx2dtg sumx.out oneshot.dtg_x
 net cmdd2sumy halui.axis.1.pos-commanded sumy.in0
-net sumy2dtg sumy.out oneshot.dtg_y
+#net sumy2dtg sumy.out oneshot.dtg_y
 net cmdd2sumz halui.axis.2.pos-commanded sumz.in0
-net sumz2dtg sumz.out oneshot.dtg_z
+#net sumz2dtg sumz.out oneshot.dtg_z
 
 loadrt conv_float_s32 names=f2s32
 addf f2s32 servo-thread
 
 
-net scale2spindle oneshot.spindle_scale halui.spindle-override.scale
+#net scale2spindle oneshot.spindle_scale halui.spindle-override.scale
 
 setp halui.feed-override.direct-value true
 setp halui.feed-override.count-enable true
 setp halui.feed-override.scale .01
-net scale2conv oneshot.feed_scale f2s32.in 
-net conv2counts f2s32.out  halui.feed-override.counts 
+#net scale2conv oneshot.feed_scale f2s32.in 
+#net conv2counts f2s32.out  halui.feed-override.counts 
 
 
 

@@ -65,9 +65,9 @@ class OneShot:
                      'home_z_button':2, 'home_all_button':-1} 
         self.errorWindow = self.builder.get_object("error_popup")
         self.errorWindowLabel = self.builder.get_object("error_queue_label") 
-        self.builder.get_object("spindle_adjustment").set_value(1.0)
-        self.feedAdjustment = self.builder.get_object("feed_adjustment")
-        self.feedAdjustment.set_value(100)                        
+        #self.builder.get_object("spindle_adjustment").set_value(1.0)
+        #self.feedAdjustment = self.builder.get_object("feed_adjustment")
+        #self.feedAdjustment.set_value(100)                        
         self.window.show()
         self.window.maximize()
         self.panel = gladevcp.makepins.GladePanel(self.halcomp, gladeFile,
@@ -115,7 +115,7 @@ class OneShot:
             self.cmd.mdi("G28 Z2")
             self.cmd.wait_complete()             
 
-    def on_status_pop_button_released(self, button):
+    def on_status_pop_button_released(self, button):  #?????????????????
         self.error_statusbar.pop(self.context_id)
     
     def on_face_settings_set_button_activate(self, button, data=None):
@@ -179,15 +179,6 @@ class OneShot:
         print "jogIncrement", self.jogIncrement
         self.notListening = False
     
-    def on_spindle_scale_format_value(self, slider, value):
-        return "{0}%".format(value*100)   
-     
-    def on_jogAdjustment_value_changed(self, adjustment):
-        self.jogSpeed = adjustment.get_value()
-        
-    def on_jog_scale_format_value(self, slider, value):
-        return round(value*60) 
-        
     def on_power_button_toggled(self, button):
         self.builder.get_object("homing_frame").set_sensitive(
                                 button.get_active())
@@ -221,6 +212,7 @@ class OneShot:
             if axisNum == -1:  
                 self.home_all_label.set_label('Home All') 
             self.synchronizeToggleButtons()
+    
     def format_floats(self, column, cell, model, iter):
         idx = self.columnNames.index(column.get_title())
         cell.set_property('text', "%0.3f" % model.get_value(iter, idx))

@@ -47,8 +47,8 @@
                         <child>
                           <object class="GtkImageMenuItem" id="imagemenuitem2">
                             <property name="visible">True</property>
-                            <property name="related_action">hal_action_open</property>
                             <property name="use_action_appearance">True</property>
+                            <property name="related_action">hal_action_open</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
                             <property name="always_show_image">True</property>
@@ -171,8 +171,8 @@
                   <object class="GtkToggleToolButton" id="estop_button">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">E-Stop: Toggle to enable power.</property>
-                    <property name="related_action">hal_toggleaction_estop</property>
                     <property name="use_action_appearance">True</property>
+                    <property name="related_action">hal_toggleaction_estop</property>
                     <property name="label" translatable="yes">_Stop</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-stop</property>
@@ -187,8 +187,8 @@
                   <object class="GtkToggleToolButton" id="power_button">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">Enable CNC. Turn off E-Stop to enable</property>
-                    <property name="related_action">hal_toggleaction_power</property>
                     <property name="use_action_appearance">True</property>
+                    <property name="related_action">hal_toggleaction_power</property>
                     <property name="label" translatable="yes">C_onnect</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-connect</property>
@@ -203,8 +203,8 @@
                   <object class="GtkToggleToolButton" id="run_button">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">Run. Will switch to auto mode and run the currently loaded program</property>
-                    <property name="related_action">hal_toggleaction_run</property>
                     <property name="use_action_appearance">True</property>
+                    <property name="related_action">hal_toggleaction_run</property>
                     <property name="label" translatable="yes">_Play</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-media-play</property>
@@ -217,8 +217,8 @@
                 <child>
                   <object class="GtkToolButton" id="step_button">
                     <property name="visible">True</property>
-                    <property name="related_action">hal_action_step</property>
                     <property name="use_action_appearance">True</property>
+                    <property name="related_action">hal_action_step</property>
                     <property name="label" translatable="yes">_Next</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-media-next</property>
@@ -231,8 +231,8 @@
                 <child>
                   <object class="GtkToggleToolButton" id="pause_button">
                     <property name="visible">True</property>
-                    <property name="related_action">hal_toggleaction_pause</property>
                     <property name="use_action_appearance">True</property>
+                    <property name="related_action">hal_toggleaction_pause</property>
                     <property name="label" translatable="yes">P_ause</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-media-pause</property>
@@ -245,8 +245,8 @@
                 <child>
                   <object class="GtkToggleToolButton" id="stop_button">
                     <property name="visible">True</property>
-                    <property name="related_action">hal_toggleaction_stop</property>
                     <property name="use_action_appearance">True</property>
+                    <property name="related_action">hal_toggleaction_stop</property>
                     <property name="label" translatable="yes">_Stop</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-media-stop</property>
@@ -259,8 +259,8 @@
                 <child>
                   <object class="GtkToolButton" id="reload_button">
                     <property name="visible">True</property>
-                    <property name="related_action">hal_action_reload</property>
                     <property name="use_action_appearance">True</property>
+                    <property name="related_action">hal_action_reload</property>
                     <property name="label" translatable="yes">_Refresh</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-refresh</property>
@@ -319,10 +319,10 @@
                                         <child>
                                           <object class="HAL_LED" id="x_led">
                                             <property name="visible">True</property>
+                                            <property name="off_color">red</property>
+                                            <property name="led_shape">2</property>
                                             <property name="led_size">5</property>
                                             <property name="on_color">green</property>
-                                            <property name="led_shape">2</property>
-                                            <property name="off_color">red</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -373,10 +373,10 @@
                                         <child>
                                           <object class="HAL_LED" id="y_led">
                                             <property name="visible">True</property>
+                                            <property name="off_color">red</property>
+                                            <property name="led_shape">2</property>
                                             <property name="led_size">5</property>
                                             <property name="on_color">green</property>
-                                            <property name="led_shape">2</property>
-                                            <property name="off_color">red</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -427,10 +427,10 @@
                                         <child>
                                           <object class="HAL_LED" id="z_led">
                                             <property name="visible">True</property>
+                                            <property name="off_color">red</property>
+                                            <property name="led_shape">2</property>
                                             <property name="led_size">5</property>
                                             <property name="on_color">green</property>
-                                            <property name="led_shape">2</property>
-                                            <property name="off_color">red</property>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -491,10 +491,10 @@
                                     <child>
                                       <object class="HAL_LED" id="xyz_led">
                                         <property name="visible">True</property>
+                                        <property name="off_color">red</property>
+                                        <property name="led_shape">2</property>
                                         <property name="led_size">5</property>
                                         <property name="on_color">green</property>
-                                        <property name="led_shape">2</property>
-                                        <property name="off_color">red</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -580,9 +580,9 @@ Red =  hard limit</property>
                                 <child>
                                   <object class="HAL_LED" id="x_soft_limit_led">
                                     <property name="visible">True</property>
+                                    <property name="pick_color_off">#c8c8c8c80000</property>
                                     <property name="led_size">6</property>
                                     <property name="on_color">yellow</property>
-                                    <property name="pick_color_off">#c8c8c8c80000</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -629,9 +629,9 @@ Red =  hard limit</property>
                                 <child>
                                   <object class="HAL_LED" id="y_soft_limit_led">
                                     <property name="visible">True</property>
+                                    <property name="pick_color_off">#bebebebe0000</property>
                                     <property name="led_size">6</property>
                                     <property name="on_color">yellow</property>
-                                    <property name="pick_color_off">#bebebebe0000</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -678,9 +678,9 @@ Red =  hard limit</property>
                                 <child>
                                   <object class="HAL_LED" id="z_soft_limit_led">
                                     <property name="visible">True</property>
+                                    <property name="pick_color_off">#bebebebe0000</property>
                                     <property name="led_size">6</property>
                                     <property name="on_color">yellow</property>
-                                    <property name="pick_color_off">#bebebebe0000</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1129,266 +1129,7 @@ Red =  hard limit</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkFrame" id="DRO_frame">
-                    <property name="visible">True</property>
-                    <property name="border_width">5</property>
-                    <property name="label_xalign">0.5</property>
-                    <child>
-                      <object class="GtkTable" id="DRO_table">
-                        <property name="visible">True</property>
-                        <property name="n_rows">3</property>
-                        <property name="column_spacing">5</property>
-                        <property name="row_spacing">5</property>
-                        <property name="homogeneous">True</property>
-                        <child>
-                          <object class="GtkTable" id="G53_table">
-                            <property name="visible">True</property>
-                            <property name="border_width">2</property>
-                            <property name="n_rows">3</property>
-                            <property name="n_columns">2</property>
-                            <property name="homogeneous">True</property>
-                            <child>
-                              <object class="GtkLabel" id="label4">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">ABS X</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label5">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">ABS Y</property>
-                              </object>
-                              <packing>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label9">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">ABS Z</property>
-                              </object>
-                              <packing>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="HAL_Label" id="dro_x">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                                <property name="label_pin_type">1</property>
-                                <property name="text_template">%.04f</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="HAL_Label" id="dro_y">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                                <property name="label_pin_type">1</property>
-                                <property name="text_template">%.04f</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="HAL_Label" id="dro_z">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                                <property name="label_pin_type">1</property>
-                                <property name="text_template">%.04f</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="y_options"></property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkTable" id="G54_table">
-                            <property name="visible">True</property>
-                            <property name="n_rows">3</property>
-                            <property name="n_columns">2</property>
-                            <property name="homogeneous">True</property>
-                            <child>
-                              <object class="GtkLabel" id="label18">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">REL X</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label20">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">REL Y</property>
-                              </object>
-                              <packing>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label26">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">REL Z</property>
-                              </object>
-                              <packing>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="HAL_Label" id="dro_gx">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                                <property name="label_pin_type">1</property>
-                                <property name="text_template">%.04f</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="HAL_Label" id="dro_gy">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                                <property name="label_pin_type">1</property>
-                                <property name="text_template">%.04f</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="HAL_Label" id="dro_gz">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                                <property name="label_pin_type">1</property>
-                                <property name="text_template">%.04f</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="top_attach">1</property>
-                            <property name="bottom_attach">2</property>
-                            <property name="y_options"></property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkTable" id="DTG_table">
-                            <property name="visible">True</property>
-                            <property name="n_rows">3</property>
-                            <property name="n_columns">2</property>
-                            <property name="homogeneous">True</property>
-                            <child>
-                              <object class="GtkLabel" id="label13">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">DTG X</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label15">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">DTG Y</property>
-                              </object>
-                              <packing>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label17">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">DTG Z</property>
-                              </object>
-                              <packing>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="HAL_Label" id="dtg_x">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                                <property name="label_pin_type">1</property>
-                                <property name="text_template">%0.4f</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="HAL_Label" id="dtg_y">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                                <property name="label_pin_type">1</property>
-                                <property name="text_template">%0.4f</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="HAL_Label" id="dtg_z">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes">-</property>
-                                <property name="label_pin_type">1</property>
-                                <property name="text_template">%0.4f</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="top_attach">2</property>
-                            <property name="bottom_attach">3</property>
-                            <property name="y_options"></property>
-                          </packing>
-                        </child>
-                      </object>
-                    </child>
-                    <child type="label">
-                      <object class="GtkLabel" id="dro_label">
-                        <property name="visible">True</property>
-                        <property name="label" translatable="yes">DRO</property>
-                        <property name="use_markup">True</property>
-                      </object>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="position">4</property>
-                  </packing>
+                  <placeholder/>
                 </child>
               </object>
               <packing>
@@ -1403,615 +1144,81 @@ Red =  hard limit</property>
                 <property name="can_focus">True</property>
                 <property name="homogeneous">True</property>
                 <child>
-                  <object class="GtkHBox" id="operation_box">
+                  <object class="GtkTable" id="table2">
                     <property name="visible">True</property>
+                    <property name="n_rows">3</property>
+                    <property name="n_columns">2</property>
                     <child>
-                      <object class="GtkFrame" id="frame2">
+                      <object class="GtkHBox" id="overrides_box">
                         <property name="visible">True</property>
-                        <property name="border_width">5</property>
-                        <property name="label_xalign">0</property>
                         <child>
-                          <object class="GtkVBox" id="plot_box">
+                          <object class="GtkFrame" id="mdi_frame">
                             <property name="visible">True</property>
-                            <property name="border_width">5</property>
+                            <property name="label_xalign">0.5</property>
                             <child>
-                              <object class="HAL_Gremlin" id="hal_gremlin1">
-                                <property name="visible">True</property>
-                                <property name="double_buffered">False</property>
-                                <property name="enable_dro">False</property>
-                                <property name="metric_units">False</property>
-                              </object>
-                              <packing>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkHBox" id="hbox14">
+                              <object class="GtkAlignment" id="alignment2">
                                 <property name="visible">True</property>
                                 <child>
-                                  <object class="GtkFrame" id="overrirde_frame">
+                                  <object class="EMC_MDIHistory" id="hal_mdihistory1">
                                     <property name="visible">True</property>
-                                    <property name="label_xalign">0.5</property>
                                     <child>
-                                      <object class="GtkAlignment" id="alignment3">
-                                        <property name="visible">True</property>
-                                        <property name="border_width">5</property>
-                                        <property name="xalign">0</property>
-                                        <child>
-                                          <object class="GtkVBox" id="vbox6">
-                                            <property name="visible">True</property>
-                                            <child>
-                                              <object class="GtkFrame" id="frame11">
-                                                <property name="visible">True</property>
-                                                <property name="label_xalign">0</property>
-                                                <child>
-                                                  <object class="GtkHBox" id="hbox19">
-                                                    <property name="visible">True</property>
-                                                    <property name="border_width">3</property>
-                                                    <child>
-                                                      <object class="GtkButton" id="feed_minus_button">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
-                                                        <property name="receives_default">True</property>
-                                                        <signal name="clicked" handler="on_feed_minus_button_clicked"/>
-                                                        <child>
-                                                          <object class="GtkImage" id="image11">
-                                                            <property name="visible">True</property>
-                                                            <property name="stock">gtk-remove</property>
-                                                            <property name="icon-size">1</property>
-                                                          </object>
-                                                        </child>
-                                                      </object>
-                                                      <packing>
-                                                        <property name="expand">False</property>
-                                                        <property name="fill">False</property>
-                                                        <property name="position">0</property>
-                                                      </packing>
-                                                    </child>
-                                                    <child>
-                                                      <object class="GtkVBox" id="vbox18">
-                                                        <property name="visible">True</property>
-                                                        <child>
-                                                          <object class="HAL_HScale" id="feed_scale">
-                                                            <property name="visible">True</property>
-                                                            <property name="can_focus">True</property>
-                                                            <property name="adjustment">feed_adjustment</property>
-                                                            <property name="digits">0</property>
-                                                            <property name="value_pos">left</property>
-                                                          </object>
-                                                          <packing>
-                                                            <property name="position">0</property>
-                                                          </packing>
-                                                        </child>
-                                                      </object>
-                                                      <packing>
-                                                        <property name="padding">2</property>
-                                                        <property name="position">1</property>
-                                                      </packing>
-                                                    </child>
-                                                    <child>
-                                                      <object class="GtkButton" id="feed_plus_button">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
-                                                        <property name="receives_default">True</property>
-                                                        <signal name="clicked" handler="on_feed_plus_button_clicked"/>
-                                                        <child>
-                                                          <object class="GtkImage" id="image12">
-                                                            <property name="visible">True</property>
-                                                            <property name="stock">gtk-add</property>
-                                                            <property name="icon-size">1</property>
-                                                          </object>
-                                                        </child>
-                                                      </object>
-                                                      <packing>
-                                                        <property name="expand">False</property>
-                                                        <property name="fill">False</property>
-                                                        <property name="position">2</property>
-                                                      </packing>
-                                                    </child>
-                                                  </object>
-                                                </child>
-                                                <child type="label">
-                                                  <object class="GtkLabel" id="label67">
-                                                    <property name="visible">True</property>
-                                                    <property name="label" translatable="yes">Feed</property>
-                                                    <property name="use_markup">True</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="expand">False</property>
-                                                <property name="position">0</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkFrame" id="frame12">
-                                                <property name="visible">True</property>
-                                                <property name="label_xalign">0</property>
-                                                <child>
-                                                  <object class="GtkHBox" id="hbox20">
-                                                    <property name="visible">True</property>
-                                                    <property name="border_width">3</property>
-                                                    <child>
-                                                      <object class="GtkButton" id="button3">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
-                                                        <property name="receives_default">True</property>
-                                                        <child>
-                                                          <object class="GtkImage" id="image13">
-                                                            <property name="visible">True</property>
-                                                            <property name="stock">gtk-remove</property>
-                                                            <property name="icon-size">1</property>
-                                                          </object>
-                                                        </child>
-                                                      </object>
-                                                      <packing>
-                                                        <property name="expand">False</property>
-                                                        <property name="fill">False</property>
-                                                        <property name="position">0</property>
-                                                      </packing>
-                                                    </child>
-                                                    <child>
-                                                      <object class="HAL_HScale" id="spindle_scale">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
-                                                        <property name="adjustment">spindle_adjustment</property>
-                                                        <property name="digits">2</property>
-                                                        <property name="value_pos">left</property>
-                                                        <signal name="format_value" handler="on_spindle_scale_format_value"/>
-                                                      </object>
-                                                      <packing>
-                                                        <property name="position">1</property>
-                                                      </packing>
-                                                    </child>
-                                                    <child>
-                                                      <object class="GtkButton" id="button4">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
-                                                        <property name="receives_default">True</property>
-                                                        <child>
-                                                          <object class="GtkImage" id="image14">
-                                                            <property name="visible">True</property>
-                                                            <property name="stock">gtk-add</property>
-                                                            <property name="icon-size">1</property>
-                                                          </object>
-                                                        </child>
-                                                      </object>
-                                                      <packing>
-                                                        <property name="expand">False</property>
-                                                        <property name="fill">False</property>
-                                                        <property name="position">2</property>
-                                                      </packing>
-                                                    </child>
-                                                  </object>
-                                                </child>
-                                                <child type="label">
-                                                  <object class="GtkLabel" id="label68">
-                                                    <property name="visible">True</property>
-                                                    <property name="label" translatable="yes">Spindle</property>
-                                                    <property name="use_markup">True</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="expand">False</property>
-                                                <property name="position">1</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkFrame" id="frame13">
-                                                <property name="visible">True</property>
-                                                <property name="label_xalign">0</property>
-                                                <child>
-                                                  <object class="GtkHBox" id="hbox21">
-                                                    <property name="visible">True</property>
-                                                    <property name="border_width">3</property>
-                                                    <child>
-                                                      <object class="GtkButton" id="button5">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
-                                                        <property name="receives_default">True</property>
-                                                        <child>
-                                                          <object class="GtkImage" id="image15">
-                                                            <property name="visible">True</property>
-                                                            <property name="stock">gtk-remove</property>
-                                                            <property name="icon-size">1</property>
-                                                          </object>
-                                                        </child>
-                                                      </object>
-                                                      <packing>
-                                                        <property name="expand">False</property>
-                                                        <property name="fill">False</property>
-                                                        <property name="position">0</property>
-                                                      </packing>
-                                                    </child>
-                                                    <child>
-                                                      <object class="HAL_HScale" id="jog_speed">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
-                                                        <property name="adjustment">jog_adjustment</property>
-                                                        <property name="value_pos">left</property>
-                                                        <signal name="format_value" handler="on_jog_scale_format_value"/>
-                                                      </object>
-                                                      <packing>
-                                                        <property name="position">1</property>
-                                                      </packing>
-                                                    </child>
-                                                    <child>
-                                                      <object class="GtkButton" id="button6">
-                                                        <property name="visible">True</property>
-                                                        <property name="can_focus">True</property>
-                                                        <property name="receives_default">True</property>
-                                                        <child>
-                                                          <object class="GtkImage" id="image16">
-                                                            <property name="visible">True</property>
-                                                            <property name="stock">gtk-add</property>
-                                                            <property name="icon-size">1</property>
-                                                          </object>
-                                                        </child>
-                                                      </object>
-                                                      <packing>
-                                                        <property name="expand">False</property>
-                                                        <property name="fill">False</property>
-                                                        <property name="position">2</property>
-                                                      </packing>
-                                                    </child>
-                                                  </object>
-                                                </child>
-                                                <child type="label">
-                                                  <object class="GtkLabel" id="label69">
-                                                    <property name="visible">True</property>
-                                                    <property name="label" translatable="yes">Jog Speed</property>
-                                                    <property name="use_markup">True</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="expand">False</property>
-                                                <property name="position">2</property>
-                                              </packing>
-                                            </child>
-                                          </object>
-                                        </child>
-                                      </object>
-                                    </child>
-                                    <child type="label">
-                                      <object class="GtkLabel" id="label35">
-                                        <property name="visible">True</property>
-                                        <property name="label" translatable="yes">Overrides</property>
-                                        <property name="use_markup">True</property>
-                                      </object>
+                                      <placeholder/>
                                     </child>
                                   </object>
-                                  <packing>
-                                    <property name="position">0</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkFrame" id="frame3">
-                                    <property name="visible">True</property>
-                                    <property name="label_xalign">0.5</property>
-                                    <child>
-                                      <object class="GtkAlignment" id="alignment2">
-                                        <property name="visible">True</property>
-                                        <child>
-                                          <object class="EMC_MDIHistory" id="hal_mdihistory1">
-                                            <property name="visible">True</property>
-                                          </object>
-                                        </child>
-                                      </object>
-                                    </child>
-                                    <child type="label">
-                                      <object class="GtkLabel" id="label11">
-                                        <property name="visible">True</property>
-                                        <property name="label" translatable="yes">MDI</property>
-                                        <property name="use_markup">True</property>
-                                      </object>
-                                    </child>
-                                  </object>
-                                  <packing>
-                                    <property name="position">1</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkFrame" id="jog_frame">
-                                    <property name="visible">True</property>
-                                    <property name="label_xalign">0.5</property>
-                                    <child>
-                                      <object class="GtkAlignment" id="alignment1">
-                                        <property name="visible">True</property>
-                                        <property name="top_padding">8</property>
-                                        <property name="left_padding">6</property>
-                                        <property name="right_padding">8</property>
-                                        <child>
-                                          <object class="GtkTable" id="table2">
-                                            <property name="visible">True</property>
-                                            <property name="n_rows">3</property>
-                                            <property name="n_columns">3</property>
-                                            <child>
-                                              <object class="GtkVBox" id="vbox17">
-                                                <property name="visible">True</property>
-                                                <child>
-                                                  <object class="GtkButton" id="jog_z_plus">
-                                                    <property name="visible">True</property>
-                                                    <property name="can_focus">True</property>
-                                                    <property name="receives_default">True</property>
-                                                    <signal name="pressed" handler="on_jog_z_plus_pressed"/>
-                                                    <signal name="released" handler="on_jog_z_plus_released"/>
-                                                    <child>
-                                                      <object class="GtkImage" id="image10">
-                                                        <property name="visible">True</property>
-                                                        <property name="stock">gtk-goto-top</property>
-                                                      </object>
-                                                    </child>
-                                                  </object>
-                                                  <packing>
-                                                    <property name="expand">False</property>
-                                                    <property name="position">0</property>
-                                                  </packing>
-                                                </child>
-                                                <child>
-                                                  <object class="GtkButton" id="jog_z_minus">
-                                                    <property name="visible">True</property>
-                                                    <property name="can_focus">True</property>
-                                                    <property name="receives_default">True</property>
-                                                    <signal name="pressed" handler="on_jog_z_minus_pressed"/>
-                                                    <signal name="released" handler="on_jog_z_minus_released"/>
-                                                    <child>
-                                                      <object class="GtkImage" id="image9">
-                                                        <property name="visible">True</property>
-                                                        <property name="stock">gtk-goto-bottom</property>
-                                                      </object>
-                                                    </child>
-                                                  </object>
-                                                  <packing>
-                                                    <property name="expand">False</property>
-                                                    <property name="position">1</property>
-                                                  </packing>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="left_attach">1</property>
-                                                <property name="right_attach">2</property>
-                                                <property name="top_attach">1</property>
-                                                <property name="bottom_attach">2</property>
-                                                <property name="y_options"></property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkButton" id="jog_y_plus">
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
-                                                <signal name="pressed" handler="on_jog_y_plus_pressed"/>
-                                                <signal name="released" handler="on_jog_y_plus_released"/>
-                                                <child>
-                                                  <object class="GtkImage" id="image7">
-                                                    <property name="visible">True</property>
-                                                    <property name="stock">gtk-go-up</property>
-                                                    <property name="icon-size">5</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="left_attach">1</property>
-                                                <property name="right_attach">2</property>
-                                                <property name="y_options">GTK_FILL</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkButton" id="jog_x_minus">
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
-                                                <signal name="pressed" handler="on_jog_x_minus_pressed"/>
-                                                <signal name="released" handler="on_jog_x_minus_released"/>
-                                                <child>
-                                                  <object class="GtkImage" id="image5">
-                                                    <property name="visible">True</property>
-                                                    <property name="stock">gtk-go-back</property>
-                                                    <property name="icon-size">5</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="top_attach">1</property>
-                                                <property name="bottom_attach">2</property>
-                                                <property name="y_options">GTK_FILL</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkButton" id="jog_x_plus">
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
-                                                <signal name="pressed" handler="on_jog_x_plus_pressed"/>
-                                                <signal name="released" handler="on_jog_x_plus_released"/>
-                                                <child>
-                                                  <object class="GtkImage" id="image6">
-                                                    <property name="visible">True</property>
-                                                    <property name="stock">gtk-go-forward</property>
-                                                    <property name="icon-size">5</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="left_attach">2</property>
-                                                <property name="right_attach">3</property>
-                                                <property name="top_attach">1</property>
-                                                <property name="bottom_attach">2</property>
-                                                <property name="y_options">GTK_FILL</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkButton" id="jog_y_minus">
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
-                                                <signal name="pressed" handler="on_jog_y_minus_pressed"/>
-                                                <signal name="released" handler="on_jog_y_minus_released"/>
-                                                <child>
-                                                  <object class="GtkImage" id="image8">
-                                                    <property name="visible">True</property>
-                                                    <property name="stock">gtk-go-down</property>
-                                                    <property name="icon-size">5</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="left_attach">1</property>
-                                                <property name="right_attach">2</property>
-                                                <property name="top_attach">2</property>
-                                                <property name="bottom_attach">3</property>
-                                                <property name="y_options">GTK_FILL</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkButton" id="button10">
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
-                                                <child>
-                                                  <object class="GtkLabel" id="label70">
-                                                    <property name="visible">True</property>
-                                                    <property name="label" translatable="yes">OVR</property>
-                                                    <attributes>
-                                                      <attribute name="weight" value="bold"/>
-                                                      <attribute name="underline" value="True"/>
-                                                      <attribute name="foreground" value="#ffff00000000"/>
-                                                    </attributes>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="left_attach">2</property>
-                                                <property name="right_attach">3</property>
-                                                <property name="top_attach">2</property>
-                                                <property name="bottom_attach">3</property>
-                                                <property name="y_options">GTK_FILL</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkToggleButton" id="jog_slow_button">
-                                                <property name="label" translatable="yes">.001</property>
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
-                                                <signal name="toggled" handler="on_jog_speed_button_toggled"/>
-                                              </object>
-                                              <packing>
-                                                <property name="x_options">GTK_FILL</property>
-                                                <property name="y_options">GTK_FILL</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkToggleButton" id="jog_med_button">
-                                                <property name="label" translatable="yes">.01</property>
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
-                                                <property name="active">True</property>
-                                                <signal name="toggled" handler="on_jog_speed_button_toggled"/>
-                                              </object>
-                                              <packing>
-                                                <property name="left_attach">2</property>
-                                                <property name="right_attach">3</property>
-                                                <property name="y_options">GTK_FILL</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkToggleButton" id="jog_fast_button">
-                                                <property name="label" translatable="yes">.1</property>
-                                                <property name="visible">True</property>
-                                                <property name="can_focus">True</property>
-                                                <property name="receives_default">True</property>
-                                                <signal name="toggled" handler="on_jog_speed_button_toggled"/>
-                                              </object>
-                                              <packing>
-                                                <property name="top_attach">2</property>
-                                                <property name="bottom_attach">3</property>
-                                                <property name="x_options">GTK_FILL</property>
-                                                <property name="y_options">GTK_FILL</property>
-                                              </packing>
-                                            </child>
-                                          </object>
-                                        </child>
-                                      </object>
-                                    </child>
-                                    <child type="label">
-                                      <object class="GtkLabel" id="label65">
-                                        <property name="visible">True</property>
-                                        <property name="label" translatable="yes">Jogging</property>
-                                        <property name="use_markup">True</property>
-                                      </object>
-                                    </child>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="padding">2</property>
-                                    <property name="position">2</property>
-                                  </packing>
                                 </child>
                               </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="position">1</property>
-                              </packing>
+                            </child>
+                            <child type="label">
+                              <object class="GtkLabel" id="label11">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">MDI</property>
+                                <property name="use_markup">True</property>
+                              </object>
                             </child>
                           </object>
-                        </child>
-                        <child type="label">
-                          <object class="GtkLabel" id="label36">
-                            <property name="visible">True</property>
-                            <property name="label" translatable="yes">Plot</property>
-                            <property name="use_markup">True</property>
-                          </object>
+                          <packing>
+                            <property name="position">0</property>
+                          </packing>
                         </child>
                       </object>
                       <packing>
-                        <property name="padding">5</property>
-                        <property name="position">0</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkVBox" id="vbox5">
+                      <object class="GtkFrame" id="overrirde_frame">
                         <property name="visible">True</property>
+                        <property name="label_xalign">0.5</property>
                         <child>
-                          <object class="GtkFrame" id="operation_frame">
+                          <object class="GtkAlignment" id="alignment3">
                             <property name="visible">True</property>
                             <property name="border_width">5</property>
-                            <property name="label_xalign">0.10000000149011612</property>
+                            <property name="xalign">0</property>
                             <child>
-                              <object class="GtkNotebook" id="notebook2">
+                              <object class="GtkVBox" id="vbox6">
                                 <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="border_width">5</property>
                                 <child>
-                                  <object class="GtkVBox" id="facing_box">
+                                  <object class="GtkFrame" id="frame11">
                                     <property name="visible">True</property>
+                                    <property name="label_xalign">0</property>
                                     <child>
-                                      <object class="GtkHBox" id="hbox1">
+                                      <object class="GtkHBox" id="hbox19">
                                         <property name="visible">True</property>
+                                        <property name="border_width">3</property>
                                         <child>
-                                          <object class="GtkFrame" id="facing_image_frame">
+                                          <object class="GtkButton" id="feed_minus_button">
                                             <property name="visible">True</property>
-                                            <property name="border_width">5</property>
-                                            <property name="label_xalign">0</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <signal name="clicked" handler="on_feed_minus_button_clicked"/>
                                             <child>
-                                              <object class="GtkImage" id="facing_album_image">
+                                              <object class="GtkImage" id="image11">
                                                 <property name="visible">True</property>
-                                                <property name="xalign">0</property>
-                                                <property name="yalign">0</property>
-                                                <property name="xpad">5</property>
-                                                <property name="ypad">5</property>
-                                                <property name="pixbuf">face_mill_small.jpg</property>
-                                              </object>
-                                            </child>
-                                            <child type="label">
-                                              <object class="GtkLabel" id="label29">
-                                                <property name="visible">True</property>
-                                                <property name="use_markup">True</property>
+                                                <property name="stock">gtk-remove</property>
+                                                <property name="icon-size">5</property>
                                               </object>
                                             </child>
                                           </object>
@@ -2021,460 +1228,1160 @@ Red =  hard limit</property>
                                             <property name="position">0</property>
                                           </packing>
                                         </child>
+                                        <child>
+                                          <object class="GtkButton" id="feed_plus_button">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <signal name="clicked" handler="on_feed_plus_button_clicked"/>
+                                            <child>
+                                              <object class="GtkImage" id="image12">
+                                                <property name="visible">True</property>
+                                                <property name="stock">gtk-add</property>
+                                                <property name="icon-size">5</property>
+                                              </object>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">False</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
                                       </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">False</property>
-                                        <property name="position">0</property>
-                                      </packing>
                                     </child>
-                                    <child>
-                                      <object class="GtkTable" id="facing_buttons_table">
+                                    <child type="label">
+                                      <object class="GtkHBox" id="hbox5">
                                         <property name="visible">True</property>
-                                        <property name="border_width">4</property>
-                                        <property name="n_rows">2</property>
-                                        <property name="n_columns">3</property>
                                         <child>
-                                          <object class="HAL_Button" id="hal_button4">
+                                          <object class="GtkLabel" id="label67">
                                             <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">face_zig-zag_image</property>
+                                            <property name="label" translatable="yes">Feed:</property>
+                                            <property name="use_markup">True</property>
                                           </object>
                                           <packing>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
+                                            <property name="position">0</property>
                                           </packing>
                                         </child>
                                         <child>
-                                          <object class="HAL_Button" id="hal_button5">
+                                          <object class="HAL_Label" id="hal_label1">
                                             <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">face_spiral_image</property>
+                                            <property name="label" translatable="yes">...</property>
                                           </object>
                                           <packing>
-                                            <property name="left_attach">1</property>
-                                            <property name="right_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button6">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">face_conventional</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">2</property>
-                                            <property name="right_attach">3</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button7">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">edge_side_full_rougher</property>
-                                          </object>
-                                          <packing>
-                                            <property name="top_attach">1</property>
-                                            <property name="bottom_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button8">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">edge_perimeter_full</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">1</property>
-                                            <property name="right_attach">2</property>
-                                            <property name="top_attach">1</property>
-                                            <property name="bottom_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button9">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">edge_perimeter_step</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">2</property>
-                                            <property name="right_attach">3</property>
-                                            <property name="top_attach">1</property>
-                                            <property name="bottom_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
+                                            <property name="position">1</property>
                                           </packing>
                                         </child>
                                       </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">False</property>
-                                        <property name="position">1</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkLabel" id="label7">
-                                        <property name="visible">True</property>
-                                        <property name="label" translatable="yes">Face Methods</property>
-                                      </object>
-                                      <packing>
-                                        <property name="position">2</property>
-                                      </packing>
                                     </child>
                                   </object>
                                   <packing>
-                                    <property name="tab_fill">False</property>
-                                  </packing>
-                                </child>
-                                <child type="tab">
-                                  <object class="GtkLabel" id="face_label">
-                                    <property name="visible">True</property>
-                                    <property name="label" translatable="yes">Face</property>
-                                  </object>
-                                  <packing>
-                                    <property name="menu_label">face_label</property>
-                                    <property name="tab_fill">False</property>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">0</property>
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkVBox" id="edging_box">
+                                  <object class="GtkFrame" id="frame12">
                                     <property name="visible">True</property>
+                                    <property name="label_xalign">0</property>
                                     <child>
-                                      <object class="GtkFrame" id="edge_image_frame">
+                                      <object class="GtkHBox" id="hbox20">
                                         <property name="visible">True</property>
-                                        <property name="border_width">5</property>
-                                        <property name="label_xalign">0</property>
+                                        <property name="border_width">3</property>
                                         <child>
-                                          <object class="GtkImage" id="edging_album_image1">
+                                          <object class="GtkButton" id="button3">
                                             <property name="visible">True</property>
-                                            <property name="xalign">0</property>
-                                            <property name="yalign">0</property>
-                                            <property name="xpad">5</property>
-                                            <property name="ypad">5</property>
-                                            <property name="pixbuf">face_mill_small.jpg</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <child>
+                                              <object class="GtkImage" id="image13">
+                                                <property name="visible">True</property>
+                                                <property name="stock">gtk-remove</property>
+                                                <property name="icon-size">5</property>
+                                              </object>
+                                            </child>
                                           </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">False</property>
+                                            <property name="position">0</property>
+                                          </packing>
                                         </child>
-                                        <child type="label">
-                                          <object class="GtkLabel" id="label43">
+                                        <child>
+                                          <object class="GtkButton" id="button4">
                                             <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <child>
+                                              <object class="GtkImage" id="image14">
+                                                <property name="visible">True</property>
+                                                <property name="stock">gtk-add</property>
+                                                <property name="icon-size">5</property>
+                                              </object>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">False</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                    </child>
+                                    <child type="label">
+                                      <object class="GtkHBox" id="hbox15">
+                                        <property name="visible">True</property>
+                                        <child>
+                                          <object class="GtkLabel" id="label68">
+                                            <property name="visible">True</property>
+                                            <property name="label" translatable="yes">Speed:</property>
                                             <property name="use_markup">True</property>
                                           </object>
-                                        </child>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">False</property>
-                                        <property name="position">0</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkTable" id="edging_buttons_table">
-                                        <property name="visible">True</property>
-                                        <property name="border_width">4</property>
-                                        <property name="n_rows">2</property>
-                                        <property name="n_columns">3</property>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button10">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">face_zig-zag_image1</property>
-                                          </object>
                                           <packing>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
+                                            <property name="position">0</property>
                                           </packing>
                                         </child>
                                         <child>
-                                          <object class="HAL_Button" id="hal_button11">
+                                          <object class="HAL_Label" id="hal_label2">
                                             <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">face_spiral_image1</property>
+                                            <property name="label" translatable="yes">...</property>
                                           </object>
                                           <packing>
-                                            <property name="left_attach">1</property>
-                                            <property name="right_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button12">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">face_conventional1</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">2</property>
-                                            <property name="right_attach">3</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button13">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">edge_side_full_rougher1</property>
-                                          </object>
-                                          <packing>
-                                            <property name="top_attach">1</property>
-                                            <property name="bottom_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button14">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">edge_perimeter_full1</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">1</property>
-                                            <property name="right_attach">2</property>
-                                            <property name="top_attach">1</property>
-                                            <property name="bottom_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button15">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">edge_perimeter_step1</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">2</property>
-                                            <property name="right_attach">3</property>
-                                            <property name="top_attach">1</property>
-                                            <property name="bottom_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
+                                            <property name="position">1</property>
                                           </packing>
                                         </child>
                                       </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">False</property>
-                                        <property name="position">1</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkLabel" id="edge_settings_label">
-                                        <property name="visible">True</property>
-                                        <property name="label" translatable="yes">Edge Methods</property>
-                                      </object>
-                                      <packing>
-                                        <property name="position">2</property>
-                                      </packing>
                                     </child>
                                   </object>
                                   <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
                                     <property name="position">1</property>
-                                  </packing>
-                                </child>
-                                <child type="tab">
-                                  <object class="GtkLabel" id="edge_label">
-                                    <property name="visible">True</property>
-                                    <property name="label" translatable="yes">Edge</property>
-                                  </object>
-                                  <packing>
-                                    <property name="menu_label">edge_label</property>
-                                    <property name="position">1</property>
-                                    <property name="tab_fill">False</property>
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkVBox" id="pocket_box">
+                                  <object class="GtkFrame" id="frame13">
                                     <property name="visible">True</property>
+                                    <property name="label_xalign">0</property>
                                     <child>
-                                      <object class="GtkFrame" id="pocketing_image_frame">
+                                      <object class="GtkHBox" id="hbox21">
                                         <property name="visible">True</property>
-                                        <property name="border_width">5</property>
-                                        <property name="label_xalign">0</property>
+                                        <property name="border_width">3</property>
                                         <child>
-                                          <object class="GtkImage" id="pocketing_album_image">
+                                          <object class="GtkButton" id="button5">
                                             <property name="visible">True</property>
-                                            <property name="xalign">0</property>
-                                            <property name="yalign">0</property>
-                                            <property name="xpad">5</property>
-                                            <property name="ypad">5</property>
-                                            <property name="pixbuf">face_mill_small.jpg</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <child>
+                                              <object class="GtkImage" id="image15">
+                                                <property name="visible">True</property>
+                                                <property name="stock">gtk-remove</property>
+                                                <property name="icon-size">5</property>
+                                              </object>
+                                            </child>
                                           </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">False</property>
+                                            <property name="position">0</property>
+                                          </packing>
                                         </child>
-                                        <child type="label">
-                                          <object class="GtkLabel" id="label39">
+                                        <child>
+                                          <object class="GtkButton" id="button6">
                                             <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <child>
+                                              <object class="GtkImage" id="image16">
+                                                <property name="visible">True</property>
+                                                <property name="stock">gtk-add</property>
+                                                <property name="icon-size">5</property>
+                                              </object>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">False</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                    </child>
+                                    <child type="label">
+                                      <object class="GtkHBox" id="hbox23">
+                                        <property name="visible">True</property>
+                                        <child>
+                                          <object class="GtkLabel" id="label69">
+                                            <property name="visible">True</property>
+                                            <property name="label" translatable="yes">Jog:</property>
                                             <property name="use_markup">True</property>
                                           </object>
-                                        </child>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">False</property>
-                                        <property name="position">0</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkTable" id="pocketing_buttons_table">
-                                        <property name="visible">True</property>
-                                        <property name="border_width">4</property>
-                                        <property name="n_rows">2</property>
-                                        <property name="n_columns">3</property>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button16">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">face_zig-zag_image2</property>
-                                          </object>
                                           <packing>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
+                                            <property name="position">0</property>
                                           </packing>
                                         </child>
                                         <child>
-                                          <object class="HAL_Button" id="hal_button17">
+                                          <object class="HAL_Label" id="hal_label3">
                                             <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">face_spiral_image2</property>
+                                            <property name="label" translatable="yes">...</property>
                                           </object>
                                           <packing>
-                                            <property name="left_attach">1</property>
-                                            <property name="right_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button18">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">face_conventional2</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">2</property>
-                                            <property name="right_attach">3</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button19">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">edge_side_full_rougher2</property>
-                                          </object>
-                                          <packing>
-                                            <property name="top_attach">1</property>
-                                            <property name="bottom_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button20">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">edge_perimeter_full2</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">1</property>
-                                            <property name="right_attach">2</property>
-                                            <property name="top_attach">1</property>
-                                            <property name="bottom_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="HAL_Button" id="hal_button21">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="receives_default">True</property>
-                                            <property name="image">edge_perimeter_step2</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">2</property>
-                                            <property name="right_attach">3</property>
-                                            <property name="top_attach">1</property>
-                                            <property name="bottom_attach">2</property>
-                                            <property name="x_options">GTK_FILL</property>
-                                            <property name="y_options">GTK_FILL</property>
+                                            <property name="position">1</property>
                                           </packing>
                                         </child>
                                       </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">False</property>
-                                        <property name="position">1</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkLabel" id="pocketing_settings_label">
-                                        <property name="visible">True</property>
-                                        <property name="label" translatable="yes">Pocket Methods</property>
-                                      </object>
-                                      <packing>
-                                        <property name="position">2</property>
-                                      </packing>
                                     </child>
                                   </object>
                                   <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
                                     <property name="position">2</property>
                                   </packing>
                                 </child>
-                                <child type="tab">
-                                  <object class="GtkLabel" id="pocket_label">
-                                    <property name="visible">True</property>
-                                    <property name="label" translatable="yes">Pocket</property>
-                                  </object>
-                                  <packing>
-                                    <property name="position">2</property>
-                                    <property name="tab_fill">False</property>
-                                  </packing>
+                                <child>
+                                  <placeholder/>
                                 </child>
                               </object>
                             </child>
-                            <child type="label">
-                              <object class="GtkLabel" id="label37">
+                          </object>
+                        </child>
+                        <child type="label">
+                          <object class="GtkLabel" id="label35">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Overrides</property>
+                            <property name="use_markup">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="bottom_attach">2</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkHBox" id="status_box">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkVBox" id="vbox20">
+                            <property name="visible">True</property>
+                            <child>
+                              <object class="GtkLabel" id="mode_status_label">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">Operation</property>
-                                <property name="use_markup">True</property>
+                                <property name="xalign">0</property>
+                                <property name="xpad">2</property>
+                                <property name="label" translatable="yes">Mode:          </property>
                               </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="mode_label">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="xpad">2</property>
+                                <property name="label" translatable="yes">...</property>
+                                <attributes>
+                                  <attribute name="foreground" value="#00000000ffff"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="position">1</property>
+                              </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">False</property>
                             <property name="position">0</property>
                           </packing>
+                        </child>
+                        <child>
+                          <object class="GtkVBox" id="vbox21">
+                            <property name="visible">True</property>
+                            <child>
+                              <object class="GtkLabel" id="Interp_status_label">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="xpad">2</property>
+                                <property name="label" translatable="yes">Iterpreter:     </property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="interp_label">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="xpad">2</property>
+                                <property name="label" translatable="yes">...</property>
+                                <attributes>
+                                  <attribute name="foreground" value="#00000000ffff"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkVBox" id="vbox22">
+                            <property name="visible">True</property>
+                            <child>
+                              <object class="GtkLabel" id="label61">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="xpad">2</property>
+                                <property name="label" translatable="yes">Task:          </property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="exec_label">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="xpad">2</property>
+                                <property name="label" translatable="yes">...</property>
+                                <attributes>
+                                  <attribute name="foreground" value="#00000000ffff"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFrame" id="jog_frame">
+                        <property name="visible">True</property>
+                        <property name="border_width">5</property>
+                        <property name="label_xalign">0.5</property>
+                        <child>
+                          <object class="GtkAlignment" id="alignment1">
+                            <property name="visible">True</property>
+                            <property name="top_padding">3</property>
+                            <property name="bottom_padding">5</property>
+                            <property name="left_padding">3</property>
+                            <property name="right_padding">5</property>
+                            <child>
+                              <object class="GtkTable" id="table3">
+                                <property name="visible">True</property>
+                                <property name="n_rows">3</property>
+                                <property name="n_columns">3</property>
+                                <child>
+                                  <object class="GtkVBox" id="vbox17">
+                                    <property name="visible">True</property>
+                                    <child>
+                                      <object class="GtkButton" id="jog_z_plus">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <signal name="pressed" handler="on_jog_z_plus_pressed"/>
+                                        <signal name="released" handler="on_jog_z_plus_released"/>
+                                        <child>
+                                          <object class="GtkImage" id="image10">
+                                            <property name="visible">True</property>
+                                            <property name="stock">gtk-goto-top</property>
+                                            <property name="icon-size">1</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkButton" id="jog_z_minus">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <signal name="pressed" handler="on_jog_z_minus_pressed"/>
+                                        <signal name="released" handler="on_jog_z_minus_released"/>
+                                        <child>
+                                          <object class="GtkImage" id="image9">
+                                            <property name="visible">True</property>
+                                            <property name="stock">gtk-goto-bottom</property>
+                                            <property name="icon-size">1</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="jog_y_plus">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <signal name="pressed" handler="on_jog_y_plus_pressed"/>
+                                    <signal name="released" handler="on_jog_y_plus_released"/>
+                                    <child>
+                                      <object class="GtkImage" id="image7">
+                                        <property name="visible">True</property>
+                                        <property name="stock">gtk-go-up</property>
+                                        <property name="icon-size">5</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="y_options">GTK_FILL</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="jog_x_minus">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <signal name="pressed" handler="on_jog_x_minus_pressed"/>
+                                    <signal name="released" handler="on_jog_x_minus_released"/>
+                                    <child>
+                                      <object class="GtkImage" id="image5">
+                                        <property name="visible">True</property>
+                                        <property name="stock">gtk-go-back</property>
+                                        <property name="icon-size">5</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
+                                    <property name="y_options">GTK_FILL</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="jog_x_plus">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <signal name="pressed" handler="on_jog_x_plus_pressed"/>
+                                    <signal name="released" handler="on_jog_x_plus_released"/>
+                                    <child>
+                                      <object class="GtkImage" id="image6">
+                                        <property name="visible">True</property>
+                                        <property name="stock">gtk-go-forward</property>
+                                        <property name="icon-size">5</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
+                                    <property name="y_options">GTK_FILL</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="jog_y_minus">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <signal name="pressed" handler="on_jog_y_minus_pressed"/>
+                                    <signal name="released" handler="on_jog_y_minus_released"/>
+                                    <child>
+                                      <object class="GtkImage" id="image8">
+                                        <property name="visible">True</property>
+                                        <property name="stock">gtk-go-down</property>
+                                        <property name="icon-size">5</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="y_options">GTK_FILL</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="button10">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <child>
+                                      <object class="GtkLabel" id="label70">
+                                        <property name="visible">True</property>
+                                        <property name="label" translatable="yes">OVR</property>
+                                        <attributes>
+                                          <attribute name="weight" value="bold"/>
+                                          <attribute name="underline" value="True"/>
+                                          <attribute name="foreground" value="#ffff00000000"/>
+                                        </attributes>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="y_options">GTK_FILL</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkToggleButton" id="jog_slow_button">
+                                    <property name="label" translatable="yes">.001</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <signal name="toggled" handler="on_jog_speed_button_toggled"/>
+                                  </object>
+                                  <packing>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options">GTK_FILL</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkToggleButton" id="jog_med_button">
+                                    <property name="label" translatable="yes">.01</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <property name="active">True</property>
+                                    <signal name="toggled" handler="on_jog_speed_button_toggled"/>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="y_options">GTK_FILL</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkToggleButton" id="jog_fast_button">
+                                    <property name="label" translatable="yes">.1</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <signal name="toggled" handler="on_jog_speed_button_toggled"/>
+                                  </object>
+                                  <packing>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options">GTK_FILL</property>
+                                  </packing>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child type="label">
+                          <object class="GtkLabel" id="label65">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Jogging</property>
+                            <property name="use_markup">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                        <property name="x_options">GTK_FILL</property>
+                        <property name="y_options">GTK_FILL</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFrame" id="frame3">
+                        <property name="visible">True</property>
+                        <property name="border_width">5</property>
+                        <property name="label_xalign">0</property>
+                        <child>
+                          <object class="GtkAlignment" id="alignment4">
+                            <property name="visible">True</property>
+                            <property name="bottom_padding">5</property>
+                            <property name="left_padding">5</property>
+                            <property name="right_padding">5</property>
+                            <child>
+                              <object class="HAL_Gremlin" id="hal_gremlin1">
+                                <property name="visible">True</property>
+                                <property name="double_buffered">False</property>
+                                <property name="enable_dro">False</property>
+                                <property name="metric_units">False</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child type="label">
+                          <object class="GtkLabel" id="label5">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Plot</property>
+                            <property name="use_markup">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel" id="operation_label">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Operations</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                  <packing>
+                    <property name="tab_fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkTable" id="table4">
+                    <property name="visible">True</property>
+                    <property name="n_rows">3</property>
+                    <property name="n_columns">3</property>
+                    <child>
+                      <object class="GtkFrame" id="operation_frame">
+                        <property name="visible">True</property>
+                        <property name="border_width">5</property>
+                        <property name="label_xalign">0.10000000149011612</property>
+                        <child>
+                          <object class="GtkNotebook" id="notebook2">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="border_width">5</property>
+                            <child>
+                              <object class="GtkVBox" id="facing_box">
+                                <property name="visible">True</property>
+                                <child>
+                                  <object class="GtkHBox" id="hbox1">
+                                    <property name="visible">True</property>
+                                    <child>
+                                      <object class="GtkFrame" id="facing_image_frame">
+                                        <property name="visible">True</property>
+                                        <property name="border_width">5</property>
+                                        <property name="label_xalign">0</property>
+                                        <child>
+                                          <object class="GtkImage" id="facing_album_image">
+                                            <property name="visible">True</property>
+                                            <property name="xalign">0</property>
+                                            <property name="yalign">0</property>
+                                            <property name="xpad">5</property>
+                                            <property name="ypad">5</property>
+                                            <property name="pixbuf">face_mill_small.jpg</property>
+                                          </object>
+                                        </child>
+                                        <child type="label">
+                                          <object class="GtkLabel" id="label29">
+                                            <property name="visible">True</property>
+                                            <property name="use_markup">True</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">False</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkTable" id="facing_buttons_table">
+                                    <property name="visible">True</property>
+                                    <property name="border_width">4</property>
+                                    <property name="n_rows">2</property>
+                                    <property name="n_columns">3</property>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">face_zig-zag_image</property>
+                                      </object>
+                                      <packing>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">face_spiral_image</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">1</property>
+                                        <property name="right_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">face_conventional</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">2</property>
+                                        <property name="right_attach">3</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">edge_side_full_rougher</property>
+                                      </object>
+                                      <packing>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">edge_perimeter_full</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">1</property>
+                                        <property name="right_attach">2</property>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button9">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">edge_perimeter_step</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">2</property>
+                                        <property name="right_attach">3</property>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="label7">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">Face Methods</property>
+                                  </object>
+                                  <packing>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="tab_fill">False</property>
+                              </packing>
+                            </child>
+                            <child type="tab">
+                              <object class="GtkLabel" id="face_label">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Face</property>
+                              </object>
+                              <packing>
+                                <property name="menu_label">face_label</property>
+                                <property name="tab_fill">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkVBox" id="edging_box">
+                                <property name="visible">True</property>
+                                <child>
+                                  <object class="GtkFrame" id="edge_image_frame">
+                                    <property name="visible">True</property>
+                                    <property name="border_width">5</property>
+                                    <property name="label_xalign">0</property>
+                                    <child>
+                                      <object class="GtkImage" id="edging_album_image1">
+                                        <property name="visible">True</property>
+                                        <property name="xalign">0</property>
+                                        <property name="yalign">0</property>
+                                        <property name="xpad">5</property>
+                                        <property name="ypad">5</property>
+                                        <property name="pixbuf">face_mill_small.jpg</property>
+                                      </object>
+                                    </child>
+                                    <child type="label">
+                                      <object class="GtkLabel" id="label43">
+                                        <property name="visible">True</property>
+                                        <property name="use_markup">True</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkTable" id="edging_buttons_table">
+                                    <property name="visible">True</property>
+                                    <property name="border_width">4</property>
+                                    <property name="n_rows">2</property>
+                                    <property name="n_columns">3</property>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button10">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">face_zig-zag_image1</property>
+                                      </object>
+                                      <packing>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button11">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">face_spiral_image1</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">1</property>
+                                        <property name="right_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button12">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">face_conventional1</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">2</property>
+                                        <property name="right_attach">3</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button13">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">edge_side_full_rougher1</property>
+                                      </object>
+                                      <packing>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button14">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">edge_perimeter_full1</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">1</property>
+                                        <property name="right_attach">2</property>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button15">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">edge_perimeter_step1</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">2</property>
+                                        <property name="right_attach">3</property>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="edge_settings_label">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">Edge Methods</property>
+                                  </object>
+                                  <packing>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child type="tab">
+                              <object class="GtkLabel" id="edge_label">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Edge</property>
+                              </object>
+                              <packing>
+                                <property name="menu_label">edge_label</property>
+                                <property name="position">1</property>
+                                <property name="tab_fill">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkVBox" id="pocket_box">
+                                <property name="visible">True</property>
+                                <child>
+                                  <object class="GtkFrame" id="pocketing_image_frame">
+                                    <property name="visible">True</property>
+                                    <property name="border_width">5</property>
+                                    <property name="label_xalign">0</property>
+                                    <child>
+                                      <object class="GtkImage" id="pocketing_album_image">
+                                        <property name="visible">True</property>
+                                        <property name="xalign">0</property>
+                                        <property name="yalign">0</property>
+                                        <property name="xpad">5</property>
+                                        <property name="ypad">5</property>
+                                        <property name="pixbuf">face_mill_small.jpg</property>
+                                      </object>
+                                    </child>
+                                    <child type="label">
+                                      <object class="GtkLabel" id="label39">
+                                        <property name="visible">True</property>
+                                        <property name="use_markup">True</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkTable" id="pocketing_buttons_table">
+                                    <property name="visible">True</property>
+                                    <property name="border_width">4</property>
+                                    <property name="n_rows">2</property>
+                                    <property name="n_columns">3</property>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button16">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">face_zig-zag_image2</property>
+                                      </object>
+                                      <packing>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button17">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">face_spiral_image2</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">1</property>
+                                        <property name="right_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button18">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">face_conventional2</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">2</property>
+                                        <property name="right_attach">3</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button19">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">edge_side_full_rougher2</property>
+                                      </object>
+                                      <packing>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button20">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">edge_perimeter_full2</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">1</property>
+                                        <property name="right_attach">2</property>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="HAL_Button" id="hal_button21">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="image">edge_perimeter_step2</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">2</property>
+                                        <property name="right_attach">3</property>
+                                        <property name="top_attach">1</property>
+                                        <property name="bottom_attach">2</property>
+                                        <property name="x_options">GTK_FILL</property>
+                                        <property name="y_options">GTK_FILL</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="pocketing_settings_label">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">Pocket Methods</property>
+                                  </object>
+                                  <packing>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                            <child type="tab">
+                              <object class="GtkLabel" id="pocket_label">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Pocket</property>
+                              </object>
+                              <packing>
+                                <property name="position">2</property>
+                                <property name="tab_fill">False</property>
+                              </packing>
+                            </child>
+                          </object>
+                        </child>
+                        <child type="label">
+                          <object class="GtkLabel" id="label37">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Operation</property>
+                            <property name="use_markup">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkVBox" id="vbox5">
+                        <property name="visible">True</property>
+                        <child>
+                          <placeholder/>
                         </child>
                         <child>
                           <object class="GtkFrame" id="face_setting_frame">
@@ -2547,23 +2454,43 @@ etc...</property>
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">1</property>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
                       </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
                     </child>
                   </object>
                   <packing>
-                    <property name="tab_expand">True</property>
+                    <property name="position">1</property>
                   </packing>
                 </child>
                 <child type="tab">
-                  <object class="GtkLabel" id="operation_label">
+                  <object class="GtkLabel" id="label44">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Operations</property>
-                    <property name="use_markup">True</property>
+                    <property name="label" translatable="yes">Feeds and Speeds</property>
                   </object>
                   <packing>
+                    <property name="position">3</property>
                     <property name="tab_fill">False</property>
                   </packing>
                 </child>
@@ -2638,7 +2565,7 @@ etc...</property>
                     </child>
                   </object>
                   <packing>
-                    <property name="position">1</property>
+                    <property name="position">2</property>
                   </packing>
                 </child>
                 <child type="tab">
@@ -2647,7 +2574,7 @@ etc...</property>
                     <property name="label" translatable="yes">G-Code</property>
                   </object>
                   <packing>
-                    <property name="position">1</property>
+                    <property name="position">2</property>
                     <property name="tab_fill">False</property>
                   </packing>
                 </child>
@@ -3097,16 +3024,16 @@ etc...</property>
                     </child>
                   </object>
                   <packing>
-                    <property name="position">2</property>
+                    <property name="position">3</property>
                   </packing>
                 </child>
                 <child type="tab">
-                  <object class="GtkLabel" id="label44">
+                  <object class="GtkLabel" id="label4">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Feeds and Speeds</property>
+                    <property name="label" translatable="yes">page 4</property>
                   </object>
                   <packing>
-                    <property name="position">2</property>
+                    <property name="position">3</property>
                     <property name="tab_fill">False</property>
                   </packing>
                 </child>
@@ -3125,118 +3052,7 @@ etc...</property>
             <property name="visible">True</property>
             <property name="border_width">5</property>
             <child>
-              <object class="GtkVBox" id="vbox20">
-                <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel" id="mode_status_label">
-                    <property name="visible">True</property>
-                    <property name="xalign">0</property>
-                    <property name="xpad">2</property>
-                    <property name="label" translatable="yes">Mode:          </property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="mode_label">
-                    <property name="visible">True</property>
-                    <property name="xalign">0</property>
-                    <property name="xpad">2</property>
-                    <property name="label" translatable="yes">...</property>
-                    <attributes>
-                      <attribute name="foreground" value="#00000000ffff"/>
-                    </attributes>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkVBox" id="vbox21">
-                <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel" id="Interp_status_label">
-                    <property name="visible">True</property>
-                    <property name="xalign">0</property>
-                    <property name="xpad">2</property>
-                    <property name="label" translatable="yes">Iterpreter:     </property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="interp_label">
-                    <property name="visible">True</property>
-                    <property name="xalign">0</property>
-                    <property name="xpad">2</property>
-                    <property name="label" translatable="yes">...</property>
-                    <attributes>
-                      <attribute name="foreground" value="#00000000ffff"/>
-                    </attributes>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkVBox" id="vbox22">
-                <property name="visible">True</property>
-                <child>
-                  <object class="GtkLabel" id="label61">
-                    <property name="visible">True</property>
-                    <property name="xalign">0</property>
-                    <property name="xpad">2</property>
-                    <property name="label" translatable="yes">Task:          </property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="exec_label">
-                    <property name="visible">True</property>
-                    <property name="xalign">0</property>
-                    <property name="xpad">2</property>
-                    <property name="label" translatable="yes">...</property>
-                    <attributes>
-                      <attribute name="foreground" value="#00000000ffff"/>
-                    </attributes>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="position">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkHBox" id="queue_box">
+              <object class="GtkHBox" id="error_queue_box">
                 <property name="visible">True</property>
                 <child>
                   <object class="GtkEventBox" id="statusbar_event_box">
@@ -3330,7 +3146,7 @@ etc...</property>
                 </child>
               </object>
               <packing>
-                <property name="position">3</property>
+                <property name="position">0</property>
               </packing>
             </child>
           </object>
